@@ -338,6 +338,22 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     }
   }
 
+  
+  @media (max-width: 768px) {
+    .full-screen-container {
+      flex-direction: column; /* Stack elements vertically */
+    }
+
+    .stationary-image {
+      max-width: 80%; /* Adjust based on image size */
+    }
+
+    .move-image {
+      top: -20px; /* Reset top position */
+      left: -15px; /* Reset left position */
+    }
+    
+  }
 
   /* Mobile dropdown --------------------------------------------------------------------------*/ 
 #navOverlayWrapper {
