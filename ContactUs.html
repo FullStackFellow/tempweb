@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <title>colorMaker</title>
+    
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Changed from height: 100vh to min-height */
+            background-color: #ffffff;
+            padding-top: 20px; /* Add some padding at the top to avoid cutoff */
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            width: 90%;
+            gap: 20px;
+        }
+        
+        .text-section {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .text-section h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .text-section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .request-button {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #ba4545;
+            border: none;
+            border-radius: 15px; /* Rounded edges */
+            width: 250px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .request-button:hover {
+            background-color: #88323d;
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .text-section h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="main.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SAMPLE REQUEST</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="FoodAndBev.html" class="w3-bar-item w3-button">Food And Beverage</a>
+          <a href="PersonalCare.html" class="w3-bar-item w3-button">Personal Care</a>
+          <a href="PetFoodAndTreats.html" class="w3-bar-item w3-button">Pet Food And Treats</a>
+          <a href="NutrSupplements.html" class="w3-bar-item w3-button">Nutritional Supplements</a>
+          <a href="EdibleInks.html" class="w3-bar-item w3-button">Edible Inks</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+        <!-- Text Section with Title, Paragraph, and Button -->
+        <div class="text-section">
+            <h1>Contact Us!</h1>
+            <p>
+                When you contact colorMaker, Inc. in Anaheim, California, please give us your full name, company, and phone number or email address so we can get back to you. We want to solve your natural color problems ... even if they are impossible!  Please note that we are no longer located on Miraloma Ave.  Note our change of address in November 2010 to 1300 North Hancock Street, Anaheim, CA
+
+                <!-- Add a line break -->
+                <br><br>
+
+                <i class="fa fa-map-marker" style="width:30px"></i> 1300 North Hancock St. Anaheim, California 92807<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: 714-572-0444<br>
+                <i class="fa fa-fax" style="width:30px"></i>  Fax: 714-572-0999<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: inquire@colorMaker.com<br>
+            </p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="Images/contact.jpg" alt="Pet Food And Treats">
+        </div>
+    </div>
+
+</body>
+</html>

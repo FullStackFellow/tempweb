@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Request free samples of our natural color blends for testing and evaluation.">
+    <title>colorMaker</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Include reCAPTCHA JavaScript API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Local image as background */
+            background: url('Images/BlurredSampleRequest.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light semi-transparent white */
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            color: #333;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        form label {
+            font-size: 16px;
+            color: #333;
+            width: 100%;
+            text-align: left;
+        }
+
+        form input[type="text"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f7f7f7;
+            color: #333;
+            outline: none;
+        }
+
+        form input[type="radio"] {
+            margin: 0 10px;
+        }
+
+        .submit-button {
+            background-color: #e91e63;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: #d81b60;
+        }
+
+        .color-picker-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .color-button:hover {
+            background-color: #555;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .color-picker {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .close-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            background-color: #45a049;
+        }
+
+        .process-container label {
+        display: block;
+        margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+            .container h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Text -->
+    <h1>Sample Request</h1>
+    <p>Please fill out the following form to request a product sample. Requests will be processed in the order they are received. A confirmation email will be sent upon submission. You should receive your sample within two weeks.</p>
+    
+    <!-- Form -->
+    <form action="https://portal.colormaker.com/admin/process-form" method="POST" id="sample-request-form">
+        <!-- Existing form fields -->
+
+        <label for="firstname">First Name*</label>
+        <input type="text" id="firstname" name="firstname" required>
+
+        <label for="lastname">Last Name*</label>
+        <input type="text" id="lastname" name="lastname" required>
+
+        <label for="company">Company*</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="address">Address*</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City*</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State/Region*</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Mailing Code/Zip*</label>
+        <input type="text" id="zip" name="zip" required>
+
+        <label for="country">Country*</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="phone">Phone*</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="fax">Fax</label>
+        <input type="text" id="fax" name="fax">
+
+        <label for="email">E-mail*</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" value="https://">
+
+        <label for="finalhue">Color Needed (Final Hue)</label>
+        <input type="text" id="finalhue" name="finalhue">
+
+        <label for="backcolor">Background Color (Starting Hue)</label>
+        <input type="text" id="backcolor" name="backcolor">
+
+        <label for="type">Type of Product to Be Colored</label>
+        <input type="text" id="type" name="type">
+
+        <label for="use">How Will the Consumer Use It?</label>
+        <input type="text" id="use" name="use">
+
+        <label for="finalhue">Color Needed (Final Hue)</label>
+        <input type="text" id="finalhue" name="finalhue">
+
+        <label for="backcolor">Background Color (Starting Hue)</label>
+        <input type="text" id="backcolor" name="backcolor">
+
+        <label for="finalhue">Color Needed (Final Hue)</label>
+        <input type="text" id="finalhue" name="finalhue">
+
+        <label for="backcolor">Background Color (Starting Hue)</label>
+        <input type="text" id="backcolor" name="backcolor">
+
+        <label>Can You Supply a Color Target?</label>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <input type="radio" id="color-yes" name="colortarget" value="Yes">
+            <label for="color-yes">Yes</label>
+            <input type="radio" id="color-no" name="colortarget" value="No" checked>
+            <label for="color-no">No</label>
+        </div>
+
+        <!-- Button to open the color picker modal -->
+        <div class="color-picker-container">
+            <button type="button" class="color-button" onclick="openModal()">Choose Color!</button>
+        </div>
+  
+        <!-- Product Attributes -->
+        <div class="first">
+            <div class="name"><strong>Product attributes (select characteristics for each attribute):</strong></div>
+        </div>
+
+        <label>Form:</label>
+        <div>
+            <input value="Liquid" name="form" type="radio" required> <b>Liquid</b>
+            <input value="Powder" name="form" type="radio" required> <b>Powder</b>
+        </div>
+
+        <label>Product Type:</label>
+        <div>
+            <input name="producttype" value="Aqueous" type="radio" required> <b>Aqueous</b>
+            <input name="producttype" value="Oil-based" type="radio" required> <b>Oil-based</b>
+            <input name="producttype" value="Emulsion" type="radio" required> <b>Emulsion</b>
+        </div>
+
+        <label for="ph">pH (if known):</label>
+        <input name="ph" type="text">
+        <div>
+            <input name="ph" value="Acid" type="radio"> <b>Acid</b>
+            <input name="ph" value="Neutral" type="radio"> <b>Neutral</b>
+            <input name="ph" value="Basic" type="radio"> <b>Basic</b>
+        </div>
+
+        <!-- Process Info -->
+        <label>Process:</label>
+        <div class="process-container">
+            <label><input name="process" value="Frozen" type="radio"> <b>Frozen</b></label>
+            <label><input name="process" value="Baked" type="radio"> <b>Baked</b></label>
+            <label><input name="process" value="Heated" type="radio"> <b>Pasteurized</b></label>
+            <label><input name="process" value="Ambient" type="radio"> <b>Ambient</b></label>
+            <label><input name="process" value="Fried" type="radio"> <b>Fried</b></label>
+            <label><input name="process" value="Extruded" type="radio"> <b>Extruded</b></label>
+        </div>
+
+        <label>If heated, provide time and temperature:</label>
+        <input name="time" type="text" placeholder="Time (e.g., 30 minutes)">
+        <input name="temp" type="text" placeholder="Temperature (e.g., 190 F)">
+
+        <!-- Package and Distribution -->
+        <label>Package:</label>
+        <div>
+            <input name="package" value="Clear" type="radio"> <b>Clear</b>
+            <input name="package" value="Opaque" type="radio"> <b>Opaque</b>
+        </div>
+
+        <label>Distribution:</label>
+        <div>
+            <input name="distribution" value="Frozen" type="radio"> <b>Frozen</b>
+            <input name="distribution" value="Refrigerate" type="radio"> <b>Refrigerate</b>
+            <input name="distribution" value="Ambient" type="radio"> <b>Ambient</b>
+        </div>
+
+        <!-- Shelf Life -->
+        <label>Shelf Life:</label>
+        <div>
+            <input name="shelflife" value="< 6 months" type="radio"> <b>&lt; 6 months</b>
+            <input name="shelflife" value="1 year" type="radio"> <b>1 year</b>
+            <input name="shelflife" value="> 1 year" type="radio"> <b>&gt; 1 year</b>
+        </div>
+
+        <!-- Kosher and Halal Certifications -->
+        <label>Kosher Certification:</label>
+        <div>
+            <input name="kosher" value="Yes" type="radio"> <b>Yes</b>
+            <input name="kosher" value="No" type="radio"> <b>No</b>
+            <input name="kosher" value="Not Important" type="radio"> <b>Not Important</b>
+        </div>
+
+        <label>Halal Certification:</label>
+        <div>
+            <input name="halal" value="Yes" type="radio"> <b>Yes</b>
+            <input name="halal" value="No" type="radio"> <b>No</b>
+            <input name="halal" value="Not Important" type="radio"> <b>Not Important</b>
+        </div>
+
+        <!-- Special Notes -->
+        <label for="comments">Special Notes</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Any special requirements (e.g., organic, GMO-free, allergens)"></textarea>
+
+        <!-- Google reCAPTCHA widget - NEEDS PUBLIC DOMAIN KEY - -->
+        <div class="g-recaptcha" data-sitekey=" PUBLIC COLORMAKER RECAPTCHA KEY GOES HERE"></div>
+
+        <!-- Submit and Reset Buttons -->
+        <button type="submit" class="submit-button">Submit</button>
+        <input type="reset" value="Clear" class="submit-button" style="background-color: #f7f7f7; color: #333;">
+        
+    </form>
+</div>
+
+<!-- Colorwheel picker Modal -->
+<div id="colorModal" class="modal">
+    <div class="modal-content">
+        <h2>Select a Color!</h2>
+        <div id="colorPickerContainer" class="color-picker-container">
+            <canvas id="colorWheelCanvas" width="300" height="300" style="padding-bottom: 20px;"></canvas>
+            <div id="selectedColor" class="selected-color"></div>
+        </div>
+        <button id="finishedButton" class="close-button" onclick="closeModal()">This Color!</button>
+    </div>
+</div>
+
+
+
+
+<!-- JavaScript Colorpicker -->
+
+<script>
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const canvas = document.getElementById("colorWheelCanvas");
+    const ctx = canvas.getContext("2d");
+    const selectedColor = document.getElementById("selectedColor");
+    const finishedButton = document.getElementById("finishedButton");
+
+    const width = canvas.width;
+    const height = canvas.height;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const radius = width / 2;
+
+    // Draw a color wheel
+    function drawColorWheel() {
+        const imageData = ctx.createImageData(width, height);
+        const data = imageData.data;
+
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+                const dx = x - centerX;
+                const dy = y - centerY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance <= radius) {
+                    const angle = Math.atan2(dy, dx) + Math.PI;
+                    const hue = (angle / (2 * Math.PI)) * 360;
+                    const saturation = distance / radius;
+                    const rgb = hslToRgb(hue, saturation, 0.5);
+
+                    const index = (y * width + x) * 4;
+                    data[index] = rgb[0]; // Red
+                    data[index + 1] = rgb[1]; // Green
+                    data[index + 2] = rgb[2]; // Blue
+                    data[index + 3] = 255; // Alpha
+                }
+            }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+    }
+
+    // Convert HSL to RGB
+    function hslToRgb(h, s, l) {
+        const c = (1 - Math.abs(2 * l - 1)) * s;
+        const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+        const m = l - c / 2;
+        let r = 0,
+            g = 0,
+            b = 0;
+
+        if (h >= 0 && h < 60) {
+            r = c;
+            g = x;
+            b = 0;
+        } else if (h >= 60 && h < 120) {
+            r = x;
+            g = c;
+            b = 0;
+        } else if (h >= 120 && h < 180) {
+            r = 0;
+            g = c;
+            b = x;
+        } else if (h >= 180 && h < 240) {
+            r = 0;
+            g = x;
+            b = c;
+        } else if (h >= 240 && h < 300) {
+            r = x;
+            g = 0;
+            b = c;
+        } else if (h >= 300 && h <= 360) {
+            r = c;
+            g = 0;
+            b = x;
+        }
+
+        r = Math.round((r + m) * 255);
+        g = Math.round((g + m) * 255);
+        b = Math.round((b + m) * 255);
+
+        return [r, g, b];
+    }
+
+    // Get the color at a specific position
+    function getColorAtPosition(x, y) {
+        const rect = canvas.getBoundingClientRect();
+        const dx = x - rect.left - centerX;
+        const dy = y - rect.top - centerY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance > radius) {
+            return null;
+        }
+
+        const imageData = ctx.getImageData(x - rect.left, y - rect.top, 1, 1).data;
+        return {
+            color: `rgb(${imageData[0]}, ${imageData[1]}, ${imageData[2]})`,
+            x: x - rect.left,
+            y: y - rect.top
+        };
+    }
+
+    // Draw the selection dot
+    function drawSelectionDot(x, y) {
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a small black circle
+        ctx.fillStyle = "#000"; // Black color
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // Handle click on canvas
+    canvas.addEventListener("click", (event) => {
+        const result = getColorAtPosition(event.clientX, event.clientY);
+        if (result && result.color) {
+            // Clear the canvas and redraw the color wheel
+            drawColorWheel();
+
+            // Draw the selection dot
+            drawSelectionDot(result.x, result.y);
+
+            // Update UI elements
+            selectedColor.style.backgroundColor = result.color;
+            finishedButton.style.backgroundColor = result.color; // Update button background color
+            finishedButton.style.color = getTextColor(result.color); // Adjust text color for contrast
+        }
+    });
+
+    // Helper to calculate text color (white or black) for contrast
+    function getTextColor(rgbColor) {
+        const rgb = rgbColor.match(/\d+/g).map(Number);
+        const luminance = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
+        return luminance > 0.5 ? "#000" : "#fff"; // Black text on light colors, white on dark
+    }
+
+    // Initialize the color wheel
+    drawColorWheel();
+});
+
+function openModal() {
+    document.getElementById("colorModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("colorModal").style.display = "none";
+}
+
+
+</script>
+
+</body>
+</html>

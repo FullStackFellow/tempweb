@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>colorMaker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+</style>
+</head>
+<body>
+
+<!-- Desktop Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="main.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="" class="w3-bar-item w3-button">Our Story</a>
+          <a href="" class="w3-bar-item w3-button">Staff</a>
+          <a href="" class="w3-bar-item w3-button">FAQ</a>
+          <a href="" class="w3-bar-item w3-button">Partners</a>
+          <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
+          <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural Vs Synthetic</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button">Ingredient</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+<div id="navOverlayWrapper" style="display: none;">
+  <div id="navOverlay" class="w3-bar-block w3-black">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+    <div class="menu-items">
+      <a href="main.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+
+      <!-- Information Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+        <div id="InformationDropdown" class="dropdown-menu">
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
+        </div>
+      </div>
+      <!-- Ingredients Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+        <div id="IngredientsDropdown" class="dropdown-menu">
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px; margin-top:46px;">
+
+  <!-- Full-screen container for the images -->
+    <div class="full-screen-container">
+      <!-- Stationary image in the middle of the screen -->
+      <img id="stationaryImage" src="Images/CMLogoCloseUp.png" alt="CM Logo" class="stationary-image fade-in move-image">
+    </div>
+  </div>
+
+  <!-- The First Section -->
+  <div class="w3-container w3-content w3-center w3-padding-16" style="max-width:800px" id="Below_Logo">
+    <h1 class="w3-wide">colorMaker is the industry leader in custom natural color blends </h1>
+  </div>
+
+  <!-- The Food And Beverage Section -->
+  <div class="w3-green use-container-left w3-margin" id="Food_And_Beverage">
+    <div class="w3-content" style="max-width:800px">
+      <h2 class="w3-wide w3-middle-align">Food And Beverage</h2>
+      <div class="parent-container">
+        <div class="small-spline-left w3-left-align">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js" loading="eager"></script>
+          <spline-viewer url="https://prod.spline.design/8f6QSFzTPjGRV3bp/scene.splinecode" loading="eager"></spline-viewer>
+        </div>
+      </div>
+      <div class="w3-content w3-middle-align w3-padding-32">
+        <h4 class="w3-left-align">
+          ColorMaker has developed custom natural color blends since 1996.  Our color blends are compatible with our customer’s product, process, and packaging requirements.  We understand the differences between RTD beverages and powdered beverages, between tetra-pak soups and 5-log reduction juices, and between high-fat ice cream and non-dairy cheese!  Let us improve the visual appeal of your company’s food or beverage product.        </h4>
+      </div>
+      <div class="button-container">
+        <a href="FoodAndBev.html">
+          <button class="w3-button w3-white w3-section w3-right">Explore!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Personal Care Products Section -->
+  <div class="w3-yellow use-container-right w3-margin" id="Personal_Care_Products">
+    <div class="w3-content" style="max-width:800px">
+      <h2 class="w3-wide w3-right-align">Personal Care Products</h2>
+      <div class="parent-container">
+        <div class="small-spline-personal-care w3-right-align">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js" loading="eager"></script>
+          <spline-viewer url="https://prod.spline.design/nPPTGBnuz7yFMRTq/scene.splinecode" loading="eager"></spline-viewer>
+        </div>
+      </div>
+      <div class="w3-content w3-left-align w3-padding-32">
+        <h4 class="w3-left-align">
+          Personal care products are diverse, from liquid soaps and moisturizers to shampoos and sunscreens, or from body scrubs to self-tanners. Our natural color blends are water-soluble dyes; they are not insoluble pigments. Therefore, our color blends do not function in cosmetic products (such as eye liner, mascara, foundation, lipstick, or blush). We help personal care products bloom with natural color.         </h4>
+      </div>
+      <div class="button-container">
+        <a href="PersonalCare.html">
+          <button class="w3-button w3-white w3-section w3-left">Explore!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Nutritional Suppliments Section -->
+  <div class="w3-red use-container-left w3-margin" id="Nutritional_Supplements">
+    <div class="w3-content" style="max-width:800px">
+      <h2 class="w3-wide w3-left-align">Nutritional Supplements</h2>
+      <div class="parent-container">
+        <div class= "small-spline-left w3-left-align">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js" loading="eager"></script>
+          <spline-viewer url="https://prod.spline.design/LFWbj1I0QWCG6Ygh/scene.splinecode" loading="eager"></spline-viewer>
+        </div>
+      </div>
+      <div class= "w3-content w3-right-align w3-padding-32">
+        <h4 class="w3-left-align">
+          How long is the heated gelatin held at elevated temperatures?  Are finished gelatin capsules opaque or translucent?  Does your company use “V” blenders to mix ingredients before they enter a direct compression tableting machine?  We have naturally colored capsules, tablets, lozenges, and powdered drink mixes for over twenty years.  Let us improve the visual appeal of your company’s nutritional supplement.        </h4>
+      </div>
+      <div class="button-container">
+        <a href="NutrSupplements.html">
+          <button class="w3-button w3-white w3-section w3-right">Explore!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Pet Food And Treats Section -->
+  <div class="w3-blue use-container-right w3-margin" id="Pet_Food_And_Treats">
+    <div class="w3-content" style="max-width:800px">
+      <h2 class="w3-wide w3-right-align">Pet Food And Treats</h2>
+      <div class="parent-container">
+        <div class= "small-spline-pet-food w3-right-align">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js" loading="eager"></script>
+          <spline-viewer url="https://prod.spline.design/9X6pCzGMZ3kbOIm1/scene.splinecode" loading="eager"></spline-viewer>
+        </div>
+      </div>
+      <div class= "w3-content w3-left-align w3-padding-32">
+        <h4 class="w3-left-align"> 
+          From dog treats to refrigerated plant-based protein meals, dogs (and dog owners) have more choices than ever before. Gone are the days of one-size-fits-all extruded dry pet food. Gone also are the days of crushing cost constraints. Natural colors are found in bird feed, fish food, and dog treats. Let us improve the visual appeal of your company’s pet food or treat.        </h4>
+      </div>
+      <div class="button-container">
+        <a href="PetFoodAndTreats.html">
+          <button class="w3-button w3-white w3-section w3-left">Explore!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Edible Inks Section -->
+  <div class="w3-green use-container-left w3-margin" id="Edible_Inks">
+    <div class="w3-content" style="max-width:800px">
+      <h2 class="w3-wide w3-left-align">Edible Inks</h2>
+      <div class="parent-container">
+        <div class= "small-spline-left w3-left-align">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js" loading="eager"></script>
+          <spline-viewer url="https://prod.spline.design/HoBcIpWuxrkBK5Lb/scene.splinecode" loading="eager"></spline-viewer>
+        </div>
+      </div>
+      <div class= "w3-content w3-right-align w3-padding-32">
+        <h4 class="w3-left-align"> 
+          Printing inks come in four colors: CYMK – cyan, yellow, magenta, and black. By mixing these four colors, inkjet printers create millions of different shades and reproduce detailed four-color images onto the surfaces of cakes, cookies, and other products. Whether your company is marking eggs or printing four-color pictures onto the surface of birthday cakes, we deliver edible inks to dazzle your customers.        </h4>
+      </div>
+      <div class="button-container">
+        <a href="EdibleInks.html">
+          <button class="w3-button w3-white w3-section w3-right">Explore!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Other Section -->
+  <div class="w3-pink use-container-right w3-margin" id="Other">
+    <div class="w3-content" style="max-width:800px">
+      <h2 class="w3-wide w3-right-align">And Anything Else!</h2>
+      <div class="parent-container">
+        <div class= "small-spline-other w3-right-align">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js" loading="eager"></script>
+          <spline-viewer url="https://prod.spline.design/dad9cqYJZMoCT04r/scene.splinecode" loading="eager"></spline-viewer>
+        </div>
+      </div>
+      <div class= "w3-content w3-left-align w3-padding-32">
+        <h4 class="w3-left-align"> 
+          Do you work with piping on the sea floor and want a sustainable, bio-degradable natural colorant to help identify leaks?  Do you work with salons and require a washable, temporary natural colorant to cover up thinning hair?  Do you make surimi?  Cotton candy?  Self - tanners?  Magnetically guided intubation equipment?  We naturally color so much more than red velvet cake.        </h4>
+      </div>
+      <div class="button-container">
+        <a href="OtherSection.html">
+          <button class="w3-button w3-white w3-section w3-left">Explore!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT US!</h2>
+    <div class="w3-center w3-padding-16">
+      <div class="w3-center w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> 1300 North Hancock St. Anaheim, California 92807<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: 714-572-0444<br>
+        <i class="fa fa-fax" style="width:30px"></i>  Fax: 714-572-0999<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: inquire@colorMaker.com<br>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Place holder for map location -->
+<img src="" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- ColorGarden Logo at the Bottom of the Page -->
+<div class="logo-container">
+  <a href="https://colorgarden.net">
+    <img src="Images/colorGardenLogo.jpg" class="w3-image w3-greyscale-min logo-image" alt="ColorGarden Logo">
+  </a>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <p class="w3-medium">Copyright colorMaker, Inc. 2024</a></p>
+  <p class="w3-medium">Designed by Mel's Studio   -   Built by Smith Software</a></p>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
+
+<!-- Follow the white rabbit -->
