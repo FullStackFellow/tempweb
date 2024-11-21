@@ -264,17 +264,22 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     float: none; /* Remove floating to prevent layout issues */
   }
 
-  /* Adjust width and padding for small splines */
+  /* Adjust width, padding, and constrain height for small splines */
   .small-spline-left,
   .small-spline-right,
   .small-spline-pet-food,
   .small-spline-personal-care,
   .small-spline-other {
-      width: 70%; /* Element occupies 50% of the container width */
-      height: auto;
-      margin: 0 auto; /* Center the element horizontally */
-      padding: 0; /* Ensure no padding interferes */
+    width: 70%; /* Element occupies 70% of the container width */
+    margin: 0 auto; /* Center the element horizontally */
+    padding: 0; /* Ensure no padding interferes */
+    min-height: 100px; /* Set a minimum height for the content */
+    max-height: 200px; /* Optional: Limit the maximum height */
+    overflow: hidden; /* Prevent content overflow causing height increase */
+    box-sizing: border-box; /* Ensure padding doesn't affect overall height */
   }
+
+
 
   .parent-container {
       display: flex; /* Use flexbox for alignment */
@@ -508,4 +513,3 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   margin: 0 auto; /* Center image horizontally */
   filter: grayscale(20%); /* Keep greyscale effect */
 }
-
