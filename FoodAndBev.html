@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>colorMaker</title>
     
     <!-- Add Google Fonts -->
@@ -132,26 +134,87 @@
     </style>
     
 </head>
-<body>
+    <body>
 
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card">
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-            <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SAMPLE REQUEST</a>
-            <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="FoodAndBev.html" class="w3-bar-item w3-button">Food And Beverage</a>
-                    <a href="PersonalCare.html" class="w3-bar-item w3-button">Personal Care</a>
-                    <a href="PetFoodAndTreats.html" class="w3-bar-item w3-button">Pet Food And Treats</a>
-                    <a href="NutrSupplements.html" class="w3-bar-item w3-button">Nutritional Supplements</a>
-                    <a href="EdibleInks.html" class="w3-bar-item w3-button">Edible Inks</a>
-                </div>
-            </div>
+    <!-- Desktop Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="" class="w3-bar-item w3-button">Our Story</a>
+            <a href="" class="w3-bar-item w3-button">Staff</a>
+            <a href="" class="w3-bar-item w3-button">FAQ</a>
+            <a href="" class="w3-bar-item w3-button">Partners</a>
+            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
+            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
         </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural Vs Synthetic</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button">Ingredient</a>
+        </div>
+      </div>
     </div>
+  </div>
+  
+  <!-- Mobile Navbar -->
+  <div id="navOverlayWrapper" style="display: none;">
+    <div id="navOverlay" class="w3-bar-block w3-black">
+      <!-- Close Button -->
+      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+      <div class="menu-items">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+  
+        <!-- Information Dropdown -->
+        <div class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+          <div id="InformationDropdown" class="dropdown-menu">
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
+          </div>
+        </div>
+        <!-- Ingredients Dropdown -->
+        <div class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+          <div id="IngredientsDropdown" class="dropdown-menu">
+            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural Vs Synthetic</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Ingredient</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="container">
         <!-- Title Section -->
@@ -172,6 +235,6 @@
             <img src="Images/FoodAndBev.jpg" alt="Food and Beverage">
         </div>
     </div>
-    
+    <script src="main.js"></script>
 </body>
 </html>
