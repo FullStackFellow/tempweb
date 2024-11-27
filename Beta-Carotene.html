@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>colorMaker</title>
+    
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            padding-top: 20px;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 90%;
+            gap: 20px;
+        }
+    
+        .text-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column; /* Stack title and text vertically */
+            gap: 20px;
+        }
+    
+        .title-section h1 {
+            font-size: 48px;
+            color: #333;
+            margin: 0;
+            margin-top: 5px;
+        }
+    
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .text-section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+    
+        .request-button {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #edca4d;
+            border: none;
+            border-radius: 15px;
+            width: 250px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+    
+        .request-button:hover {
+            background-color: #88323d;
+            transform: scale(1.05);
+        }
+    
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+        .container {
+            flex-direction: column; /* Stack all sections vertically */
+            align-items: center;
+            display: flex;
+        }
+
+        .title-section h1 {
+            order: 1; /* Title first */
+            font-size: clamp(28px, 5vw, 48px); /* Adjust font size between 24px and 48px */
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: -25px;
+        }
+
+        .image-section {
+            order: 2; /* Image second */
+            margin-top: 60px;
+        }
+
+        .text-content {
+            order: 3; /* Entire text content last */
+            text-align: center;
+        }
+
+        .text-section {
+            margin-top: 0px;
+        }
+
+        .request-button {
+            width: 80%; /* Make button width responsive */
+            max-width: 250px; /* Keep maximum width for larger screens */
+            padding: 15px 20px; /* Adjust padding for smaller screens */
+            font-size: clamp(16px, 4vw, 20px); /* Scale font size dynamically */
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }       
+
+    }   
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- Desktop Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="" class="w3-bar-item w3-button">Our Story</a>
+            <a href="" class="w3-bar-item w3-button">Staff</a>
+            <a href="" class="w3-bar-item w3-button">FAQ</a>
+            <a href="" class="w3-bar-item w3-button">Partners</a>
+            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
+            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+          <a href="" class="w3-bar-item w3-button">Natural Colors</a>
+          <a href="" class="w3-bar-item w3-button">Annatto</a>
+          <a href="" class="w3-bar-item w3-button">Beet</a>
+          <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
+          <a href="" class="w3-bar-item w3-button">Caramel</a>
+          <a href="" class="w3-bar-item w3-button">Carmine</a>
+          <a href="" class="w3-bar-item w3-button">Grape</a>
+          <a href="" class="w3-bar-item w3-button">Paprika</a>
+          <a href="" class="w3-bar-item w3-button">Saffron</a>
+          <a href="" class="w3-bar-item w3-button">Turmeric</a>
+          <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
+          <a href="" class="w3-bar-item w3-button">Lycopene</a>
+          <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
+          <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+          <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+          <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
+          <a href="" class="w3-bar-item w3-button">Spirulina</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Navbar -->
+  <div id="navOverlayWrapper" style="display: none;">
+    <div id="navOverlay" class="w3-bar-block w3-black">
+      <!-- Close Button -->
+      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+      <div class="menu-items">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+  
+        <!-- Information Dropdown -->
+        <div class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+          <div id="InformationDropdown" class="dropdown-menu">
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
+          </div>
+        </div>
+        <!-- Ingredients Dropdown -->
+        <div class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+          <div id="IngredientsDropdown" class="dropdown-menu">
+            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
+            <a href="" class="w3-bar-item w3-button">Natural Colors</a>
+            <a href="" class="w3-bar-item w3-button">Annatto</a>
+            <a href="" class="w3-bar-item w3-button">Beet</a>
+            <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
+            <a href="" class="w3-bar-item w3-button">Caramel</a>
+            <a href="" class="w3-bar-item w3-button">Carmine</a>
+            <a href="" class="w3-bar-item w3-button">Grape</a>
+            <a href="" class="w3-bar-item w3-button">Paprika</a>
+            <a href="" class="w3-bar-item w3-button">Saffron</a>
+            <a href="" class="w3-bar-item w3-button">Turmeric</a>
+            <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
+            <a href="" class="w3-bar-item w3-button">Lycopene</a>
+            <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
+            <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+            <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+            <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
+            <a href="" class="w3-bar-item w3-button">Spirulina</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+        <!-- Title Section -->
+        <div class="text-content">
+            <div class="title-section" style="margin-top: 40px;">
+                <h1>Beta-Carotene</h1>
+            </div>
+    
+            <div class="text-section">
+                <p>
+                    The FDA lists the Colors Exempt from Certification in 21 CFR, part 73 for food, drug, and cosmetics. Refer to FDA for details on usage limitations. From this FDA approved color additive listing, ColorMaker selected the following colorants as meeting the generally understood guide used by the industry as 'natural:' 
+                    Annatto extract
+                    Beet juice
+                    Beta Carotene
+                    Caramel
+                    Cochineal extract; carmine
+                    Sodium Copper Chlorophyllin
+                    Grape juice
+                    Grape skin extract
+                    Lycopene
+                    Paprika (powder)
+                    Paprika oleoresin
+                    Saffron
+                    Titanium Dioxide
+                    Turmeric (curcumin)
+                    Turmeric oleoresin
+                    Fruit Juices (elderberry, chokeberry)
+                    Vegetable Juices (purple carrot, red cabbage, purple sweet potato, red radish, purple corn)                
+                    <br><br>
+                    Drug
+                    Annatto extract
+                    Beta Carotene
+                    Caramel
+                    Cochineal extract; carmine
+                    <br><br>
+                    Cosmetic
+                    Annatto extract
+                    Beta Carotene
+                </p>
+                <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
+                <br>
+            </div>
+        </div>
+    
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="Images/beta-carotene.jpg" alt="Beta-Carotene">
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
