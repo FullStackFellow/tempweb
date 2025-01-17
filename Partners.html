@@ -138,101 +138,101 @@
 </head>
 <body>
 
-    <!-- Desktop Navbar -->
+<!-- Desktop Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+        <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+        <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+        <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+        <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+        <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+        <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+        <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+        <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+        <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+        <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+        <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+        <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+        <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+        <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+        <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+        <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+        <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+<div id="navOverlayWrapper" style="display: none;">
+  <div id="navOverlay" class="w3-bar-block w3-black">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+    <div class="menu-items">
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
-      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
-            <a href="" class="w3-bar-item w3-button">Staff</a>
-            <a href="" class="w3-bar-item w3-button">FAQ</a>
-            <a href="" class="w3-bar-item w3-button">Partners</a>
-            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+
+      <!-- Information Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+        <div id="InformationDropdown" class="dropdown-menu">
+          <a href="ourstory.html" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
         </div>
       </div>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
-          <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-          <a href="" class="w3-bar-item w3-button">Annatto</a>
-          <a href="" class="w3-bar-item w3-button">Beet</a>
-          <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-          <a href="" class="w3-bar-item w3-button">Caramel</a>
-          <a href="" class="w3-bar-item w3-button">Carmine</a>
-          <a href="" class="w3-bar-item w3-button">Grape</a>
-          <a href="" class="w3-bar-item w3-button">Paprika</a>
-          <a href="" class="w3-bar-item w3-button">Saffron</a>
-          <a href="" class="w3-bar-item w3-button">Turmeric</a>
-          <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-          <a href="" class="w3-bar-item w3-button">Lycopene</a>
-          <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-          <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-          <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-          <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-          <a href="" class="w3-bar-item w3-button">Spirulina</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Mobile Navbar -->
-  <div id="navOverlayWrapper" style="display: none;">
-    <div id="navOverlay" class="w3-bar-block w3-black">
-      <!-- Close Button -->
-      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
-      <div class="menu-items">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
-        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-  
-        <!-- Information Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
-          <div id="InformationDropdown" class="dropdown-menu">
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
-          </div>
-        </div>
-        <!-- Ingredients Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
-          <div id="IngredientsDropdown" class="dropdown-menu">
-            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
-            <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-            <a href="" class="w3-bar-item w3-button">Annatto</a>
-            <a href="" class="w3-bar-item w3-button">Beet</a>
-            <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-            <a href="" class="w3-bar-item w3-button">Caramel</a>
-            <a href="" class="w3-bar-item w3-button">Carmine</a>
-            <a href="" class="w3-bar-item w3-button">Grape</a>
-            <a href="" class="w3-bar-item w3-button">Paprika</a>
-            <a href="" class="w3-bar-item w3-button">Saffron</a>
-            <a href="" class="w3-bar-item w3-button">Turmeric</a>
-            <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-            <a href="" class="w3-bar-item w3-button">Lycopene</a>
-            <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-            <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-            <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-            <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-            <a href="" class="w3-bar-item w3-button">Spirulina</a>
-          </div>
+      <!-- Ingredients Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+        <div id="IngredientsDropdown" class="dropdown-menu">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
+          <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+          <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+          <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+          <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+          <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+          <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+          <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+          <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+          <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+          <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+          <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+          <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+          <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+          <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+          <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+          <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+          <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
     <div class="container">
         <!-- Title Section -->
@@ -240,15 +240,37 @@
             <div class="title-section" style="margin-top: 40px;">
                 <h1>Partners</h1>
             </div>
-    
-            <div class="text-section">
-                <p>
-                    Let’s face facts: natural colors are not as iridescent, strong, or shelf-stable as synthetic colors. Further, because synthetic colors are available in each of the primary colors (FD&C Red 40, FD&C Yellow 5, and FD&C Blue 1), they can be mixed and matched to produce quite literally millions of colors. Artificial dyes and pigments are derived from petroleum products and are intended to last for years and years.
-                    <br><br>
-                    Synthetic colors have established a “gold standard” for color additives over the past seventy-five years. Synthetic colors are generally heat stable, light stable, and pH stable. They are available as water-soluble dyes (in either liquid or powdered form) or as insoluble pigments. Synthetic colors are not restricted by kosher or halal religious laws, and they are not produced from genetically modified organisms. Perhaps most importantly, synthetic colors are remarkably strong. As a result, the color of a finished product can be easily “tweaked” at the very end of the manufacturing process with few if any problems. Consequently, we say that synthetic colors are an “End-Of-Process” ingredient.
-                    <br><br>
-                    Natural colors on the other hand are a “Beginning-Of-Process” ingredient. Why? For example, some natural colors are sensitive to heat. Therefore, we must take into account any thermal processing before selecting a natural color additive. Some natural colors are sensitive to light. Therefore, we must factor into our selection the product’s packaging. Some natural colors change hue as pH changes. Thus, we must consider the product’s final pH when choosing a natural color additive. For these reasons, the selection of natural color additives should be made at the product development phase, in the beginning so to speak, not at the end of the manufacturing line.
-                </p>
+                <div class="text-section">
+                  <div>
+                    <div>
+                        <!-- Coast Southwest Section -->
+                        <div>
+                            <img src="path-to-coast-southwest-logo" alt="Coast Southwest Logo" style="max-width: 100%; height: auto;">
+                            <p>
+                                Coast Southwest is a leading full-service chemical distribution and ingredient technology company. From six strategic locations, Coast Southwest serves manufacturers and formulators of cosmetic, personal care, and household products throughout the United States with high-quality functional ingredients, on-time deliveries, and exceptional customer service. Coast Southwest specializes in surfactants, silicones, and specialty personal care chemicals.
+                            </p>
+                        </div>
+                      
+                        <!-- Quadra Section -->
+                        <div>
+                            <img src="path-to-quadra-logo" alt="Quadra Logo" style="max-width: 100%; height: auto;">
+                            <p>
+                                Quadra is Canada’s market leader of chemical and ingredient distribution. Quadra combines market focus with strong supplier and customer relationships. We are proud to have exclusive partnerships with the world’s best manufacturers. Quadra has also earned preferred-supplier status with Canada’s most successful and respected companies. National infrastructure ensures we offer coast-to-coast market coverage, from densely populated cities to remote Canadian locations.
+                            </p>
+                        </div>
+                      
+                        <!-- Farbest Brands Section -->
+                        <div>
+                            <img src="path-to-farbest-brands-logo" alt="Farbest Brands Logo" style="max-width: 100%; height: auto;">
+                            <p>
+                                Farbest Brands brings the highest quality food and nutrition ingredients to its customers from the world’s most trusted suppliers. Farbest Brands is your source for specialized and Non-GMO ingredients including dairy and plant proteins, vitamins, gums, natural colors, and organics. Farbest Brands enjoys longstanding relationships with its customers because our business is built on integrity and representing the most ethical suppliers in the industry. When it comes from Farbest, you know it’s the best.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Next Partner Spot Goes Here -->
+
                 <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
                 <br>
             </div>

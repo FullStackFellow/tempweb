@@ -338,7 +338,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     }
   }
 
-  
   @media (max-width: 768px) {
     .full-screen-container {
       flex-direction: column; /* Stack elements vertically */
@@ -354,6 +353,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     }
     
   }
+
 
   /* Mobile dropdown --------------------------------------------------------------------------*/ 
 #navOverlayWrapper {
@@ -529,3 +529,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   margin: 0 auto; /* Center image horizontally */
   filter: grayscale(20%); /* Keep greyscale effect */
 }
+
+/* CSS for homepage dropdown menu split -------------------------------------------------------*/
+

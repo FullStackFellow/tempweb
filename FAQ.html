@@ -138,101 +138,101 @@
 </head>
 <body>
 
-    <!-- Desktop Navbar -->
+ <!-- Desktop Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+        <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+        <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+        <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+        <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+        <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+        <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+        <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+        <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+        <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+        <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+        <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+        <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+        <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+        <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+        <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+        <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+        <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+<div id="navOverlayWrapper" style="display: none;">
+  <div id="navOverlay" class="w3-bar-block w3-black">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+    <div class="menu-items">
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
-      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
-            <a href="" class="w3-bar-item w3-button">Staff</a>
-            <a href="" class="w3-bar-item w3-button">FAQ</a>
-            <a href="" class="w3-bar-item w3-button">Partners</a>
-            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+
+      <!-- Information Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+        <div id="InformationDropdown" class="dropdown-menu">
+          <a href="ourstory.html" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
         </div>
       </div>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
-          <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-          <a href="" class="w3-bar-item w3-button">Annatto</a>
-          <a href="" class="w3-bar-item w3-button">Beet</a>
-          <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-          <a href="" class="w3-bar-item w3-button">Caramel</a>
-          <a href="" class="w3-bar-item w3-button">Carmine</a>
-          <a href="" class="w3-bar-item w3-button">Grape</a>
-          <a href="" class="w3-bar-item w3-button">Paprika</a>
-          <a href="" class="w3-bar-item w3-button">Saffron</a>
-          <a href="" class="w3-bar-item w3-button">Turmeric</a>
-          <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-          <a href="" class="w3-bar-item w3-button">Lycopene</a>
-          <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-          <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-          <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-          <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-          <a href="" class="w3-bar-item w3-button">Spirulina</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Mobile Navbar -->
-  <div id="navOverlayWrapper" style="display: none;">
-    <div id="navOverlay" class="w3-bar-block w3-black">
-      <!-- Close Button -->
-      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
-      <div class="menu-items">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
-        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-  
-        <!-- Information Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
-          <div id="InformationDropdown" class="dropdown-menu">
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
-          </div>
-        </div>
-        <!-- Ingredients Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
-          <div id="IngredientsDropdown" class="dropdown-menu">
-            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
-            <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-            <a href="" class="w3-bar-item w3-button">Annatto</a>
-            <a href="" class="w3-bar-item w3-button">Beet</a>
-            <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-            <a href="" class="w3-bar-item w3-button">Caramel</a>
-            <a href="" class="w3-bar-item w3-button">Carmine</a>
-            <a href="" class="w3-bar-item w3-button">Grape</a>
-            <a href="" class="w3-bar-item w3-button">Paprika</a>
-            <a href="" class="w3-bar-item w3-button">Saffron</a>
-            <a href="" class="w3-bar-item w3-button">Turmeric</a>
-            <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-            <a href="" class="w3-bar-item w3-button">Lycopene</a>
-            <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-            <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-            <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-            <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-            <a href="" class="w3-bar-item w3-button">Spirulina</a>
-          </div>
+      <!-- Ingredients Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+        <div id="IngredientsDropdown" class="dropdown-menu">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
+          <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+          <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+          <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+          <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+          <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+          <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+          <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+          <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+          <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+          <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+          <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+          <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+          <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+          <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+          <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+          <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+          <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
     <div class="container">
         <!-- Title Section -->
@@ -241,14 +241,148 @@
                 <h1>FAQ</h1>
             </div>
     
-            <div class="text-section">
-                <p>
-                    Let’s face facts: natural colors are not as iridescent, strong, or shelf-stable as synthetic colors. Further, because synthetic colors are available in each of the primary colors (FD&C Red 40, FD&C Yellow 5, and FD&C Blue 1), they can be mixed and matched to produce quite literally millions of colors. Artificial dyes and pigments are derived from petroleum products and are intended to last for years and years.
-                    <br><br>
-                    Synthetic colors have established a “gold standard” for color additives over the past seventy-five years. Synthetic colors are generally heat stable, light stable, and pH stable. They are available as water-soluble dyes (in either liquid or powdered form) or as insoluble pigments. Synthetic colors are not restricted by kosher or halal religious laws, and they are not produced from genetically modified organisms. Perhaps most importantly, synthetic colors are remarkably strong. As a result, the color of a finished product can be easily “tweaked” at the very end of the manufacturing process with few if any problems. Consequently, we say that synthetic colors are an “End-Of-Process” ingredient.
-                    <br><br>
-                    Natural colors on the other hand are a “Beginning-Of-Process” ingredient. Why? For example, some natural colors are sensitive to heat. Therefore, we must take into account any thermal processing before selecting a natural color additive. Some natural colors are sensitive to light. Therefore, we must factor into our selection the product’s packaging. Some natural colors change hue as pH changes. Thus, we must consider the product’s final pH when choosing a natural color additive. For these reasons, the selection of natural color additives should be made at the product development phase, in the beginning so to speak, not at the end of the manufacturing line.
-                </p>
+                <div class="text-section">
+                  <div>
+                    <h2>What is a natural food color?</h2>
+                    <p>
+                        There is no legal definition for a "natural food color." The US Food & Drug Administration (FDA) classifies color additives as those (1) requiring certification, and those (2) <em>exempt</em> from certification. Exempt color additives are listed in the Federal Register at 21 CFR 73. Color additives exempt from certification are those colorants the food industry generally recognizes as "natural food colors." The precise definition of a natural food color is something that each company must work out for itself. From experience, the definition of a natural food color utilized by most food companies combines regulatory concerns [Is the colorant listed under 21 CFR 73?], with agricultural source concerns [Is the colorant from a Non-GMO plant?], with chemical extraction concerns [Is the colorant extracted with water or a solvent?]. At colorMaker, we believe a colorant is natural if it exists in nature, be it agricultural, biological or mineral in form. It must of course be one of the FDA-approved color additives exempt from certification, have a long history of safe usage, and be extracted in a manner that does not involve synthetic solvents or chemical catalysts. While this working definition sounds broad, it in fact leaves us with a limited number of "natural food colors."
+                    </p>
+                  
+                    <h2>Is there a natural green color?</h2>
+                    <p>
+                        There is a chemically modified natural extractive from green leafy raw materials (alfalfa in Europe and mulberry in Asia), called sodium-copper-chlorophyllin (SCC). SCC develops a bright green hue. SCC is approved for limited use in the US, as follows:
+                    </p>
+                    <ol>
+                        <li>SCC is approved for use in citrus-based dry beverage mixes (21 CFR 73.1250);</li>
+                        <li>SCC is approved for use in personal care products (21 CFR 73.2125);</li>
+                        <li>SCC is approved in dentifrices, such as toothpaste and mouthwash (21 CFR 73.1125);</li>
+                        <li>SCC is approved for use in bone cement [polymethyl methacrylate] (21 CFR 73.3110);</li>
+                        <li>SCC is accepted by AAFCO for use in pet food, generally; and</li>
+                        <li>SCC is approved for use in foods generally throughout the EU.</li>
+                    </ol>
+                    <br>
+                    <p>
+                        So, if your dog may eat SCC, and you may spread SCC on your skin, and you may brush your teeth with SCC, and an orthopedic surgeon may place SCC inside your body, then why is it restricted in foods generally in the US? But not in the EU? And where in this regulatory framework does an energy shot fit best? Or a nutritional supplement? Or eye-liner? Obviously, the use of SCC is not a <em>safety</em> issue; rather, it is a <em>regulatory</em> issue. Each company will have to decide on its own how it wishes to tackle these regulatory issues.
+                    </p>
+                    <p>
+                        In response to the regulatory issues surrounding SCC, colorMaker developed a natural green color as a blend of anthocyanin blue or spirulina blue and turmeric yellow. Remember: blue + yellow = green. Our natural green color may not be as stable as SCC, depending upon the food system, but our natural green color clears all regulatory hurdles.
+                    </p>
+                  </div>
+                  <div>
+                    <h2>Can colorMaker supply Kosher carmine?</h2>
+                    <p>
+                        Carmine (and all other derivatives from the cochineal insect) will not be certified by Orthodox Rabbinical Organizations. Unless the kosher laws change, carmine is not a kosher ingredient. Note that kosher laws do change ... it just takes thousands of years.
+                    </p>
+                  
+                    <h2>How are natural colorants declared in the ingredient declaration?</h2>
+                    <p>
+                        ColorMaker recommends that each company review a proposed ingredient declaration with legal counsel. Generally, three (3) approaches are followed with color additives exempt from certification. First, natural colors are not individually listed but rather grouped together under the simple phrase "color added." This is allowed by FDA for color additives exempt from certification. It is NOT allowed for certified color additives. Second, many companies prefer to parenthetically list the natural colors used in their finished product, for example: “color added (annatto and beet juice).” A similar approach is to list the individual natural colors and add an explanatory parenthetical phrase, for example: “turmeric, paprika and caramel (for color).” Third, some companies prefer to list natural colors in the order of preponderance alongside all the other ingredients in the product, for example: "water, sugar, natural cherry flavor, beet juice, and sodium benzoate to preserve freshness." This is permissible.
+                    </p>
+                    <p>
+                        Note that the natural cherry flavor may be labeled as such, but the beet juice may NOT be labeled as "natural beet juice." This is because FDA does not recognize "natural colors." FDA only recognizes two types of color additives: certified color additives [artificial] and color additives exempt from certification [natural]. Never use the adjective "natural" to modify a color additive in an ingredient declaration. Similarly, you may NOT state, "natural color added."
+                    </p>
+                  
+                    <h2>Can colorMaker supply both "certified" and "exempt-from-certification" colorants?</h2>
+                    <p>
+                        No. ColorMaker specializes in "natural colors" only, i.e. color additives exempt from certification, and we can supply them in a variety of forms, dilutions, solubility, and blends.
+                    </p>
+                  
+                    <h2>What is the kosher status of ColorMaker's products?</h2>
+                    <p>
+                        ColorMaker is certified by Kentucky Kosher International. Most of our products are made with kosher ingredients and under rabbinical supervision. The notable exception is carmine. We segregate carmine as a non-kosher ingredient from our kosher ingredients.
+                    </p>
+                  </div>
+                  <div>
+                    <h2>What are "nature identical" colors?</h2>
+                    <p>
+                        Not all "natural colors" are extracts from natural sources. A small number of color additives exempt from certification are prepared synthetically. These natural colors cannot be distinguished chemically from their naturally extracted counterparts. The exactness of the chemical makeup of synthetically prepared natural colors frustrated government regulators as they could not determine, through testing, the true source of the colorant. Thus, the term "nature identical" was introduced for these colorants. Nature identical beta-carotene is an example.
+                    </p>
+                  
+                    <h2>What is a "lake" color?</h2>
+                    <p>
+                        This is a technical term that applies to the <i>insoluble</i> form of a water-soluble color (often referred to as a "pigment"). Carmine powder is a good example of the lake form of a natural colorant, cochineal. FD&C Blue #1 Lake is an example of the lake form of an artificial color.
+                    </p>
+                  
+                    <h2>What forms of annatto are available from colorMaker?</h2>
+                    <p>
+                        ColorMaker has both oil-soluble and water-soluble annatto in the form of bixin or norbixin. These annatto colors are available as liquids and powders. ColorMaker can prepare various dilutions of either form to the customer’s precise needs.
+                    </p>
+                  
+                    <h2>How stable is beet juice extract?</h2>
+                    <p>
+                        The stability of beet juice is a function of the food system to be colored. In frozen desserts, it has very good stability. On the other hand, beet juice will be destroyed quickly within a retorted product. With system compatibility, beet juice can provide long-term functionality.
+                    </p>
+                  
+                    <h2>Are there storage conditions to be followed with natural colors?</h2>
+                    <p>
+                        It is recommended that all natural colorants be stored in closed containers in a dark, cool, and dry area. If possible, refrigeration is best. <strong>DO NOT FREEZE</strong> natural colors. Many natural colors do not survive the freeze/thaw cycle.
+                    </p>
+                  
+                    <h2>Is titanium dioxide considered a natural color?</h2>
+                    <p>
+                        The answer will depend on your definition of "natural." Some argue that if the colorant is not extracted from an agricultural or biological source, the colorant is not natural. Others argue that any material taken from natural sources that imparts color, including minerals, are natural. ColorMaker falls into the latter camp.
+                    </p>
+                  </div>
+                  <div>
+                    <h2>What is meant by E-numbers for natural colors?</h2>
+                    <p>
+                        E-numbers are used in the European Union (EU) to identify approved food additives. All approved food additives must have an E number. Most, but not all, natural colors are considered food additives in the EU, and therefore most natural colors have an E-number. For example, beet juice is "E162." Note that saffron is considered a "food" in the EU and not an additive. Therefore, saffron does not have an E-number, even though it is often used as a color additive. Similarly, burnt sugar is considered a food in the EU and does not have an E-number. In the US however, burnt sugar is known as Class I Caramel Color and must be labeled as a color additive exempt from certification.
+                    </p>
+                
+                    <h2>What is meant by straight colors?</h2>
+                    <p>
+                        This term is mostly used when dealing with certified colors. At times, this term spills over into the natural color lexicon. It means a pure color with no other coloring material added, i.e., not a color blend.
+                    </p>
+                
+                    <h2>Why are natural colors not allowed in meat products?</h2>
+                    <p>
+                        This is a protective regulation enforced by USDA to discourage the use of colorants to disguise or improve the appearance of low-quality or even spoiled meats.
+                    </p>
+                
+                    <h2>Can exempt colorants be used in cosmetic products?</h2>
+                    <p>
+                        21 CFR 73, Subpart C lists the color additives exempt from certification approved for use in cosmetics. These include annatto, caramel color, beta carotene, and carmine. Note that some color additives exempt from certification (i.e., natural colors) are approved as "coloring cosmetics." A coloring cosmetic is any product intended to impart color to skin or hair. Coloring cosmetics might be thought of as "leave on" products; products such as eyeliner, mascara, lipstick, blush, foundation, concealer, or other products applied and then left on the skin or hair for the purpose of imparting color. Such products are commonly referred to as cosmetic products, which are different from personal care products.
+                    </p>
+                    <p>
+                        Personal care products are not necessarily "leave on" products; products such as bar soaps, liquid soaps, shampoos, moisturizers, and facial masks. These personal care products are not coloring cosmetics because they are not intended to impart color to skin or hair. A quick review of personal care products on the retail shelf leads one to conclude that the industry has taken the position that if a colorant is allowed in food (i.e., it may be safely ingested), then it must be safe in a topical application. As a result, many natural colors used in foods are often used in personal care products, but not in cosmetic products.
+                    </p>
+                  </div>
+                  <div>
+                    <h2>What colorants are allowed for pharmaceutical products?</h2>
+                    <p>
+                        21 CFR 73, Subpart B lists color additives exempt from certification approved for use in drugs. Subpart B includes annatto, caramel color, beta carotene, and carmine. Please note that drugs are primarily sold by prescription, while "nutritional supplements" are sold over-the-counter (OTC). The “nutritional supplement” industry is regulated differently than the prescription drug industry.
+                    </p>
+                
+                    <h2>What if I cannot supply colorMaker with a color target for their blend development work?</h2>
+                    <p>
+                        ColorMaker always tests color blends developed in their laboratory in simulated product systems. Simulated product systems are utilized to mimic what colorMaker believes the customer wants colored. For example, in our lab we may create a simple syrup to mimic a beverage concentrate which our customer hopes to color naturally. Or we may bake various goods, and test our color blends in the batter or dough which our customer hopes to color naturally. Of course, we also use experience to select a hue which we think best satisfies the customer's request. The customer must recognize that the color blend was developed on a “best guess” basis, and could be way off the mark. This negative can be turned positive by reviewing the customer’s results, since both colorMaker and the customer will be viewing the same end result and can therefore communicate the target more clearly.
+                    </p>
+                
+                    <h2>What steps are taken to assure product quality and product safety?</h2>
+                    <p>
+                        Our natural color blends are compliant with worldwide regulations. We follow the standards set by the GFSI and are SQF Certified. We undergo annual third-party audits and several of our staff are certified PCQI.
+                    </p>
+                  </div>
+                  <div>
+                    <h2>Can natural colorants replace FD&C colorants?</h2>
+                    <p>
+                        ColorMaker has been successful in replicating Red 40, Yellow 5, and Yellow 6 for water-based systems. We have been able to mimic the hue in powder form for dry beverages and for direct compression tableting. We have developed a water-soluble blue in a liquid or powder form but this is not of the same hue as Blue 1. All anthocyanin-based blue have a grey undertone and are pH sensitive. Some of the basic colors, such as turmeric, annatto and carmine can be used as lakes, but can only come close in hue to the FD&C lakes. In some product systems a purple (mimicking Red 40 plus Blue 1) can be achieved but we recommend that product stability testing be done to assure attainment of satisfactory shelf life.
+                    </p>
+                    <p>
+                        ColorMaker, Inc. regularly updates our "Frequently Asked Questions." Please do not hesitate to ask your questions by phone, fax or e-mail at the numbers listed in this site. We do our best to answer all your questions!
+                    </p>
+                
+                    <h2>Do I have to declare the glycerin in your natural color blend on my ingredient declaration?</h2>
+                    <p>
+                        No. We must disclose all sub-ingredients in our natural color blends (such as glycerin, ethyl alcohol, guar gum, mono & di-glycerides, or maltodextrin). These sub-ingredients help stabilize or solubilize or disperse our natural colors, but these sub-ingredients perform no function in your finished food or beverage product. Therefore, under 21 CFR 101.100(a)(3) these sub-ingredients are <em>incidental additives</em> "... present in a food at insignificant levels and do not have any technical or functional effect in that food."
+                    </p>
+                
+                    <h2>How may I avoid declaring any color additive on my ingredient declaration?</h2>
+                    <p>
+                        It's nearly impossible and we don't recommend it.
+                    </p>
+                  </div>
+                
                 <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
                 <br>
             </div>

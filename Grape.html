@@ -138,101 +138,101 @@
 </head>
 <body>
 
-    <!-- Desktop Navbar -->
+<!-- Desktop Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+        <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+        <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+        <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+        <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+        <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+        <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+        <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+        <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+        <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+        <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+        <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+        <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+        <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+        <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+        <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+        <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+        <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+<div id="navOverlayWrapper" style="display: none;">
+  <div id="navOverlay" class="w3-bar-block w3-black">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+    <div class="menu-items">
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
-      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="" class="w3-bar-item w3-button">Our Story</a>
-            <a href="" class="w3-bar-item w3-button">Staff</a>
-            <a href="" class="w3-bar-item w3-button">FAQ</a>
-            <a href="" class="w3-bar-item w3-button">Partners</a>
-            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+
+      <!-- Information Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+        <div id="InformationDropdown" class="dropdown-menu">
+          <a href="ourstory.html" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
         </div>
       </div>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
-          <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-          <a href="" class="w3-bar-item w3-button">Annatto</a>
-          <a href="" class="w3-bar-item w3-button">Beet</a>
-          <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-          <a href="" class="w3-bar-item w3-button">Caramel</a>
-          <a href="" class="w3-bar-item w3-button">Carmine</a>
-          <a href="" class="w3-bar-item w3-button">Grape</a>
-          <a href="" class="w3-bar-item w3-button">Paprika</a>
-          <a href="" class="w3-bar-item w3-button">Saffron</a>
-          <a href="" class="w3-bar-item w3-button">Turmeric</a>
-          <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-          <a href="" class="w3-bar-item w3-button">Lycopene</a>
-          <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-          <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-          <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-          <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-          <a href="" class="w3-bar-item w3-button">Spirulina</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Mobile Navbar -->
-  <div id="navOverlayWrapper" style="display: none;">
-    <div id="navOverlay" class="w3-bar-block w3-black">
-      <!-- Close Button -->
-      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
-      <div class="menu-items">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
-        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-  
-        <!-- Information Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
-          <div id="InformationDropdown" class="dropdown-menu">
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
-          </div>
-        </div>
-        <!-- Ingredients Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
-          <div id="IngredientsDropdown" class="dropdown-menu">
-            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
-            <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-            <a href="" class="w3-bar-item w3-button">Annatto</a>
-            <a href="" class="w3-bar-item w3-button">Beet</a>
-            <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-            <a href="" class="w3-bar-item w3-button">Caramel</a>
-            <a href="" class="w3-bar-item w3-button">Carmine</a>
-            <a href="" class="w3-bar-item w3-button">Grape</a>
-            <a href="" class="w3-bar-item w3-button">Paprika</a>
-            <a href="" class="w3-bar-item w3-button">Saffron</a>
-            <a href="" class="w3-bar-item w3-button">Turmeric</a>
-            <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-            <a href="" class="w3-bar-item w3-button">Lycopene</a>
-            <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-            <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-            <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-            <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-            <a href="" class="w3-bar-item w3-button">Spirulina</a>
-          </div>
+      <!-- Ingredients Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+        <div id="IngredientsDropdown" class="dropdown-menu">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
+          <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+          <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+          <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+          <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+          <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+          <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+          <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+          <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+          <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+          <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+          <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+          <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+          <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+          <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+          <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+          <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+          <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
     <div class="container">
         <!-- Title Section -->
@@ -242,36 +242,27 @@
             </div>
     
             <div class="text-section">
-                <p>
-                    The FDA lists the Colors Exempt from Certification in 21 CFR, part 73 for food, drug, and cosmetics. Refer to FDA for details on usage limitations. From this FDA approved color additive listing, ColorMaker selected the following colorants as meeting the generally understood guide used by the industry as 'natural:' 
-                    Annatto extract
-                    Beet juice
-                    Beta Carotene
-                    Caramel
-                    Cochineal extract; carmine
-                    Sodium Copper Chlorophyllin
-                    Grape juice
-                    Grape skin extract
-                    Lycopene
-                    Paprika (powder)
-                    Paprika oleoresin
-                    Saffron
-                    Titanium Dioxide
-                    Turmeric (curcumin)
-                    Turmeric oleoresin
-                    Fruit Juices (elderberry, chokeberry)
-                    Vegetable Juices (purple carrot, red cabbage, purple sweet potato, red radish, purple corn)                
-                    <br><br>
-                    Drug
-                    Annatto extract
-                    Beta Carotene
-                    Caramel
-                    Cochineal extract; carmine
-                    <br><br>
-                    Cosmetic
-                    Annatto extract
-                    Beta Carotene
+                  <p>
+                    Grape is the single most abundant fruit harvested in the world from which a natural color is commercially obtained. Grapes are highly pigmented with anthocyanins, a pool of colorants responsible for the purple, violet, blue, magenta, red and orange color of many fruits, vegetables and flowers. Anthocyanins are often extracted from the grape skin remaining after wine crushing or from the "leas," the sediment at the bottom of barrels from the wine aging process. Most recently, additional sources of anthocyanins have become available, from the grape juice of selected varieties, from vegetable juice extracts (purple carrots, red cabbages, purple sweet potatoes, red radishes, and purple corn), and from berries (elderberries and chokeberries).
                 </p>
+                
+                <h2 style="color: #000000;">Preparation:</h2>
+                <p>
+                    Grapeskin extraction is carried out using a dilute aqueous solution of an acid, usually sulfurous acid. The extract is made up of various anthocyanins, sugars, acids and salts. It is usually concentrated to a viscous thick liquid of about 20-30° Brix, containing about 0.5 to 1.5 % anthocyanin content. This liquid can be spray dried, most often with maltodextrin as a carrier. The powder can average 4% anthocyanin. There are two forms of grapeskin extract available commercially (liquid and powder). The extract is purchased not on the anthocyanin content, but on color strength (absorbency / gm), a measurement used to standardize batches. The differences observed between batches / suppliers are a function of variety, source, condition of extraction, and the anthocyanin makeup of the extract. These variables, as well as the properties of the product to be colored, will dictate the functionality of grapeskin and its stability. Grapeskin extracts are usually not available kosher.
+                </p>
+                <h2 style="color: #000000;">Properties:</h2>
+                <p>
+                    Grapeskin extract is soluble in water and water/alcohol, but not in fats and oils. The colorant will slowly oxidize in aqueous solutions and the addition of ascorbic acid does not help, but rather accelerates, color instability. If working with grapeskin or grape juice, or any anthocyanin, beware of Vitamin C. The colorant is very susceptible to pH changes and in a practical sense, is only used in products that are acidic in nature, i.e., pH 4 or below. There is gradual color change from red to blue-red, purple, steel blue, gray-green to dull yellow as the pH increases from 1 to 13. The pH not only affects color, but color intensity and color stability, each being best at pH 1 to 3.5. Stability to heat appears to be temperature dependent and long-term heating, even at low temperatures, will degrade the colorant to a brown precipitant. It reportedly can survive through jam, jelly and fruit canning processing as well as HTST. Cations, such as iron and copper, can cause discoloration and precipitation. A protective effect is observed at high sugar concentrations, probably a function of reduced water activity. Spray-dried powders with water activity less than 0.3, for example, are stable at room temperature for over one year. Low sugar levels in high water content products, conversely, accelerate breakdown. The presence of fructose has been reported to increase browning considerably faster than glucose or sucrose. Grapeskin is unstable to UV and visible light exposure.
+                </p>
+                <p>
+                    It was discovered that doubly acylated anthocyanin mixtures exhibited better stability to light, heat and oxidation than the mono-acylated anthocyanins obtained from grapeskins. A search for plant materials with high levels of naturally occurring doubly acylated anthocyanins led to grape varietal selection and to other anthocyanin containing vegetables, such as purple carrots, red cabbages, purple sweet potatoes, red radishes, and purple corn. ColorMaker can supply all anthocyanin-based colors. It is interesting to note that fruit-derived anthocyanins (grape, elderberry, blueberry) are not as shelf-stable as vegetable-derived anthocyanins (purple carrot, red cabbage, red radish). On the other hand, fruit-derived anthocyanins are pleasant and not off-putting in aroma, where some vegetable-derived anthocyanins have a strong, earthy, vegetable odor ... in short, they stink.
+                </p>
+
+                <h2 style="color: #000000;">Application:</h2>
+                <p>
+                    Grapeskin extract has found application in water-based acidic beverages, jellies, candy, gelatin desserts, skin and hair care personal products, dry mixes, dark chocolate, cake mixes, ice cream, and compressed tablets.
+                </p>
+                
                 <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
                 <br>
             </div>

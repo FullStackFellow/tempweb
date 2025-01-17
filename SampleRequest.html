@@ -123,6 +123,7 @@
             background-color: #555;
         }
 
+
         /* Modal Styling */
         .modal {
             display: none;
@@ -166,6 +167,10 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            font-size: 20px;
+            min-width: 250px; /* Ensures a minimum button width */
+            min-height: 70px; /* Ensures a minimum button height */
+            text-align: center; /* Ensures proper alignment of text */
         }
 
         .close-button:hover {
@@ -367,7 +372,7 @@
 <!-- Colorwheel picker Modal -->
 <div id="colorModal" class="modal">
     <div class="modal-content">
-        <h2>Select a Color!</h2>
+        <h2>Tap to select a color!</h2>
         <div id="colorPickerContainer" class="color-picker-container">
             <canvas id="colorWheelCanvas" width="300" height="300" style="padding-bottom: 20px;"></canvas>
             <div id="selectedColor" class="selected-color"></div>
@@ -487,12 +492,14 @@
 
     // Draw the selection dot
     function drawSelectionDot(x, y) {
-        ctx.beginPath();
-        ctx.arc(x, y, 5, 0, 2 * Math.PI); // Draw a small black circle
-        ctx.fillStyle = "#000"; // Black color
-        ctx.fill();
-        ctx.closePath();
-    }
+    ctx.beginPath();
+    ctx.arc(x, y, 8, 0, 2 * Math.PI); // Draw a slightly larger circle
+    ctx.strokeStyle = "#000"; // Black outline color
+    ctx.lineWidth = 1; // Set the thickness of the circle's border
+    ctx.stroke(); // Draw the outline of the circle
+    ctx.closePath();
+}
+
 
     // Handle click on canvas
     canvas.addEventListener("click", (event) => {
