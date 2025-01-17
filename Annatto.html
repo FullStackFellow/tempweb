@@ -138,101 +138,101 @@
 </head>
 <body>
 
-    <!-- Desktop Navbar -->
+<!-- Desktop Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+        <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+        <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+        <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+        <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+        <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+        <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+        <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+        <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+        <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+        <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+        <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+        <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+        <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+        <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+        <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+        <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+        <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+<div id="navOverlayWrapper" style="display: none;">
+  <div id="navOverlay" class="w3-bar-block w3-black">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+    <div class="menu-items">
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
-      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="" class="w3-bar-item w3-button">Our Story</a>
-            <a href="" class="w3-bar-item w3-button">Staff</a>
-            <a href="" class="w3-bar-item w3-button">FAQ</a>
-            <a href="" class="w3-bar-item w3-button">Partners</a>
-            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+
+      <!-- Information Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+        <div id="InformationDropdown" class="dropdown-menu">
+          <a href="ourstory.html" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
         </div>
       </div>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
-          <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-          <a href="" class="w3-bar-item w3-button">Annatto</a>
-          <a href="" class="w3-bar-item w3-button">Beet</a>
-          <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-          <a href="" class="w3-bar-item w3-button">Caramel</a>
-          <a href="" class="w3-bar-item w3-button">Carmine</a>
-          <a href="" class="w3-bar-item w3-button">Grape</a>
-          <a href="" class="w3-bar-item w3-button">Paprika</a>
-          <a href="" class="w3-bar-item w3-button">Saffron</a>
-          <a href="" class="w3-bar-item w3-button">Turmeric</a>
-          <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-          <a href="" class="w3-bar-item w3-button">Lycopene</a>
-          <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-          <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-          <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-          <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-          <a href="" class="w3-bar-item w3-button">Spirulina</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Mobile Navbar -->
-  <div id="navOverlayWrapper" style="display: none;">
-    <div id="navOverlay" class="w3-bar-block w3-black">
-      <!-- Close Button -->
-      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
-      <div class="menu-items">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
-        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-  
-        <!-- Information Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
-          <div id="InformationDropdown" class="dropdown-menu">
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
-          </div>
-        </div>
-        <!-- Ingredients Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
-          <div id="IngredientsDropdown" class="dropdown-menu">
-            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
-            <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-            <a href="" class="w3-bar-item w3-button">Annatto</a>
-            <a href="" class="w3-bar-item w3-button">Beet</a>
-            <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-            <a href="" class="w3-bar-item w3-button">Caramel</a>
-            <a href="" class="w3-bar-item w3-button">Carmine</a>
-            <a href="" class="w3-bar-item w3-button">Grape</a>
-            <a href="" class="w3-bar-item w3-button">Paprika</a>
-            <a href="" class="w3-bar-item w3-button">Saffron</a>
-            <a href="" class="w3-bar-item w3-button">Turmeric</a>
-            <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-            <a href="" class="w3-bar-item w3-button">Lycopene</a>
-            <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-            <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-            <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-            <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-            <a href="" class="w3-bar-item w3-button">Spirulina</a>
-          </div>
+      <!-- Ingredients Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+        <div id="IngredientsDropdown" class="dropdown-menu">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
+          <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+          <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+          <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+          <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+          <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+          <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+          <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+          <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+          <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+          <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+          <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+          <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+          <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+          <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+          <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+          <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+          <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
     <div class="container">
         <!-- Title Section -->
@@ -242,36 +242,42 @@
             </div>
     
             <div class="text-section">
-                <p>
-                    The FDA lists the Colors Exempt from Certification in 21 CFR, part 73 for food, drug, and cosmetics. Refer to FDA for details on usage limitations. From this FDA approved color additive listing, ColorMaker selected the following colorants as meeting the generally understood guide used by the industry as 'natural:' 
-                    Annatto extract
-                    Beet juice
-                    Beta Carotene
-                    Caramel
-                    Cochineal extract; carmine
-                    Sodium Copper Chlorophyllin
-                    Grape juice
-                    Grape skin extract
-                    Lycopene
-                    Paprika (powder)
-                    Paprika oleoresin
-                    Saffron
-                    Titanium Dioxide
-                    Turmeric (curcumin)
-                    Turmeric oleoresin
-                    Fruit Juices (elderberry, chokeberry)
-                    Vegetable Juices (purple carrot, red cabbage, purple sweet potato, red radish, purple corn)                
-                    <br><br>
-                    Drug
-                    Annatto extract
-                    Beta Carotene
-                    Caramel
-                    Cochineal extract; carmine
-                    <br><br>
-                    Cosmetic
-                    Annatto extract
-                    Beta Carotene
-                </p>
+                
+              <p>
+                  It is hard to believe that the rich golden color of cheddar cheese actually comes from a plant. This orange-yellow color, called annatto, is extracted from the seed coats of a tropical tree, <i>Bixa orellano</i>. The tree has heart-shaped leaves and small pink to white flowers bearing pods, which on maturing, contain hundreds of rust-colored seeds. The rust-colored resinous material surrounding the seed is the source of annatto. The chemical name for the color principle of annatto is Bixin.
+              </p>
+              
+              <h2 style="color: #000000;">Preparation:</h2>
+              <p>
+                  Annatto is available commercially in oil-soluble and water-soluble forms, depending on the method of extraction and subsequent preparation into dilutions, suspensions, mixtures, emulsions and powders. It is usually purchased on the basis of bixin content.
+              </p>
+              <p>
+                  The oil-soluble form is prepared by softening the seeds with steam and extracting the pericarp with ethanol, a chlorinated hydrocarbon, or a vegetable oil. Bixin, the major chromophore extracted, can make up more than 80% of the seed coat material. Bixin can be crystallized and offered for sale in a 28 to 90% powder form.
+              </p>
+              <p>
+                  The water-soluble form is prepared by extraction of the softened pericarp with propylene glycol containing potassium hydroxide. In this system, the bixin is saponified during the extraction and turned into norbixin.
+              </p>
+              <p>
+                  ColorMaker regularly works with and offers annatto in various forms:
+              </p>
+              <ul>
+                  <li>Liquid, oil soluble (bixin content varies 0.1 to 0.3% in vegetable oil).</li>
+                  <li>Liquid suspension (bixin is added at 3 to 7.5% level in vegetable oil).</li>
+                  <li>Liquid, water soluble (varying percent of norbixin in KOH solution).</li>
+                  <li>Powder, water soluble (varying range of norbixin (7 to 15%) with KOH).</li>
+                  <li>Blends with varying concentrations of bixin, norbixin, turmeric and/or paprika.</li>
+              </ul>
+              <h2 style="color: #000000;">Properties:</h2>
+              <p>
+                  Bixin is only sparingly soluble in oil, up to 0.1 to 0.3% by weight. Bixin is pH sensitive, moving from yellow-orange to a pink shade at a low pH. However, pH has no affect on color stability. Thermal stability is good under 100°C but breaks down rapidly above 125°C. Exposure to air is not a problem but exposure to light can be, as bixin behaves much like the carotenoid it is. Bixin fades in the presence of light. The use of an antioxidant helps stability. In the absence of light, bixin is stable.
+              </p>
+              <p>
+                  Norbixin is water soluble and solutions containing over 5% can be achieved. Norbixin is known to precipitate in products high in calcium ions, high in acidity, or held at very cold / frozen temperatures. It reacts with protein, with a slight shift to a delicate peach-red color, sometimes seen in some cheeses colored with annatto. This binding property is useful in coloring products that must hold the color and not bleed into the surrounding medium. Norbixin solutions can be spray dried to form a fine free-flowing powder. Concentration of norbixin in the powder can range up to 15%. In this form, annatto is prone to oxidation with measurable loss of color value over time. In products where norbixin is bound with protein / starch, it is stable to both light and heat. Aqueous solutions of norbixin, initially developed for the cheese industry, vary in concentration and are often identified as single strength (1.25 to 1.4%), double strength (2.5 to 2.8%), and triple strength (3.0 to 3.8%). As noted earlier, some forms of annatto contain potassium hydroxide, a strong alkali. Great care should be taken to avoid splashing and to wear safety glasses or goggles when handling the colorant. Request an MSDS from the supplier relative to the specific annatto blend selected. Alternative saponifiers to KOH are available from ColorMaker on request.
+              </p>
+              <h2 style="color: #000000;">Applications:</h2>
+              <p>
+                Color application will dictate the form of annatto to be selected. Further, differences in solubility between bixin and norbixin will be one of the determinants. For moderately acidic food and beverage systems, annatto has been used for coloring ices, hard candies, fruit flavors or fruit based beverages, and many carbonated drinks. Annatto has also found use in dairy products, margarine, fats, popcorn oil, butter mixes, baked goods, icings, snacks, ice cream, salad dressing, yogurts, drinks, salmon/tuna, meat products, desserts, and dry mixes. It is used in hair and skin care products, rouges and blushes. It has been used in direct compression tablets, tablet coating, and gelatin capsules. All forms of annatto can be obtained kosher certified.
+              </p>
                 <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
                 <br>
             </div>
