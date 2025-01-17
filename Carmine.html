@@ -138,101 +138,102 @@
 </head>
 <body>
 
-    <!-- Desktop Navbar -->
+<!-- Desktop Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+        <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+        <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+        <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+        <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+        <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+        <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+        <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+        <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+        <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+        <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+        <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+        <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+        <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+        <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+        <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+        <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+        <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+<div id="navOverlayWrapper" style="display: none;">
+  <div id="navOverlay" class="w3-bar-block w3-black">
+    <!-- Close Button -->
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+    <div class="menu-items">
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
-      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="" class="w3-bar-item w3-button">Our Story</a>
-            <a href="" class="w3-bar-item w3-button">Staff</a>
-            <a href="" class="w3-bar-item w3-button">FAQ</a>
-            <a href="" class="w3-bar-item w3-button">Partners</a>
-            <a href="" class="w3-bar-item w3-button">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button">Regulation And Labeling</a>
+      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+
+      <!-- Information Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+        <div id="InformationDropdown" class="dropdown-menu">
+          <a href="ourstory.html" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
+          <a href="staff.html" class="w3-bar-item w3-button w3-padding-large">Staff</a>
+          <a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+          <a href="Partners.html" class="w3-bar-item w3-button w3-padding-large">Partners</a>
+          <a href="PrivacyNotice.html" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
+          <a href="Regulations.html" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
         </div>
       </div>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
-          <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-          <a href="" class="w3-bar-item w3-button">Annatto</a>
-          <a href="" class="w3-bar-item w3-button">Beet</a>
-          <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-          <a href="" class="w3-bar-item w3-button">Caramel</a>
-          <a href="" class="w3-bar-item w3-button">Carmine</a>
-          <a href="" class="w3-bar-item w3-button">Grape</a>
-          <a href="" class="w3-bar-item w3-button">Paprika</a>
-          <a href="" class="w3-bar-item w3-button">Saffron</a>
-          <a href="" class="w3-bar-item w3-button">Turmeric</a>
-          <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-          <a href="" class="w3-bar-item w3-button">Lycopene</a>
-          <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-          <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-          <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-          <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-          <a href="" class="w3-bar-item w3-button">Spirulina</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Mobile Navbar -->
-  <div id="navOverlayWrapper" style="display: none;">
-    <div id="navOverlay" class="w3-bar-block w3-black">
-      <!-- Close Button -->
-      <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
-      <div class="menu-items">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
-        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-  
-        <!-- Information Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
-          <div id="InformationDropdown" class="dropdown-menu">
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Staff</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Partners</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
-            <a href="" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
-          </div>
-        </div>
-        <!-- Ingredients Dropdown -->
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
-          <div id="IngredientsDropdown" class="dropdown-menu">
-            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
-            <a href="" class="w3-bar-item w3-button">Natural Colors</a>
-            <a href="" class="w3-bar-item w3-button">Annatto</a>
-            <a href="" class="w3-bar-item w3-button">Beet</a>
-            <a href="" class="w3-bar-item w3-button">Beta-Carotene</a>
-            <a href="" class="w3-bar-item w3-button">Caramel</a>
-            <a href="" class="w3-bar-item w3-button">Carmine</a>
-            <a href="" class="w3-bar-item w3-button">Grape</a>
-            <a href="" class="w3-bar-item w3-button">Paprika</a>
-            <a href="" class="w3-bar-item w3-button">Saffron</a>
-            <a href="" class="w3-bar-item w3-button">Turmeric</a>
-            <a href="" class="w3-bar-item w3-button">Chlorophyll</a>
-            <a href="" class="w3-bar-item w3-button">Lycopene</a>
-            <a href="" class="w3-bar-item w3-button">Titanium Dioxide</a>
-            <a href="" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-            <a href="" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-            <a href="" class="w3-bar-item w3-button">Iron Oxide</a>
-            <a href="" class="w3-bar-item w3-button">Spirulina</a>
-          </div>
+      <!-- Ingredients Dropdown -->
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+        <div id="IngredientsDropdown" class="dropdown-menu">
+          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
+          <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+          <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+          <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+          <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+          <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+          <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+          <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+          <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+          <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+          <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+          <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+          <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+          <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+          <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+          <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+          <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+          <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
     <div class="container">
         <!-- Title Section -->
@@ -242,36 +243,31 @@
             </div>
     
             <div class="text-section">
-                <p>
-                    The FDA lists the Colors Exempt from Certification in 21 CFR, part 73 for food, drug, and cosmetics. Refer to FDA for details on usage limitations. From this FDA approved color additive listing, ColorMaker selected the following colorants as meeting the generally understood guide used by the industry as 'natural:' 
-                    Annatto extract
-                    Beet juice
-                    Beta Carotene
-                    Caramel
-                    Cochineal extract; carmine
-                    Sodium Copper Chlorophyllin
-                    Grape juice
-                    Grape skin extract
-                    Lycopene
-                    Paprika (powder)
-                    Paprika oleoresin
-                    Saffron
-                    Titanium Dioxide
-                    Turmeric (curcumin)
-                    Turmeric oleoresin
-                    Fruit Juices (elderberry, chokeberry)
-                    Vegetable Juices (purple carrot, red cabbage, purple sweet potato, red radish, purple corn)                
-                    <br><br>
-                    Drug
-                    Annatto extract
-                    Beta Carotene
-                    Caramel
-                    Cochineal extract; carmine
-                    <br><br>
-                    Cosmetic
-                    Annatto extract
-                    Beta Carotene
-                </p>
+              <p>
+                In the ancient world of the Aztecs, carmine was the homage of kings. It was considered more valuable than gold. This bright red colorant required the labor of hundreds of subjects combing the desert in search of the cochineal insect. It is believed that around 1518, Cortez discovered the Aztecs using cochineal. To the Spaniards, it was an amazing colorant and considerably stronger than other dyes used in Europe. The Spanish government turned it into a lucrative export.
+            </p>
+            <p>
+                This insect <i>Dactylopus coccus costa</i> attaches itself to specific varieties of cactus (<i>Opuntia</i> or <i>Nopalea</i>) found in the semi-arid areas of Peru, Bolivia, Chile, The Canary Islands, and Mexico. Collection of the insects is a cottage industry, but development of plantations and deliberate seeding of the cacti is on the increase in all the producing areas.
+            </p>
+            
+            <h2 style="color: #000000;">Preparation:</h2>
+            <p>
+                The colorant is extracted from the bodies of female insects, which may contain from 10% to 20% of their dry weight of the color principle chemically called: carminic acid. The collected insects are dried and extracted with alkalized hot water or alkalized hot water containing low levels of ethanol. It is estimated that about 25 million insects are required to make 32 pounds of water-soluble extract. The extract is meticulously processed to be totally free of any insect parts. The resulting liquid is called cochineal, a term also used to refer to the insect and products prepared from the extract. It is important that buyers understand the context in which the term "cochineal" is being used because language difficulties can cause confusion.
+            </p>
+            <h2 style="color: #000000;">Properties:</h2>
+            <p>
+                Cochineal (the primary extract) is a purplish-red liquid, water soluble and susceptible to microbial degradation if not handled with care. For this reason, it is often subsequently tray dried or spray-dried. Cochineal is therefore available as a liquid (variable amount of carminic acid below 5%), crystal form (usually 95-99% carminic acid) and powdered form (about 50% carminic acid). Cochineal is pH sensitive, as it is orange-yellow below pH 4, wine red from pH 4 to 6.5, and purple-red above pH 6.5. Cochineal extract has found application primarily in the beverage industry. Its solubility in aqueous acidic systems and absence of aluminum content favor broader application.
+            </p>
+            <p>
+                Carmine is made by precipitating carminic acid from the primary extract onto an alumina hydrate substrate, using aluminum or calcium cations. This precipitate is a "lake" and is traditionally dried to contain about 50 to 53% carminic acid. Carmine is insoluble in water and oil. It is stable if pH is held above 6. It is soluble in alkaline solution, where it is a bright burgundy/violet color. Liquid carmine is usually offered as a 3% to 7.5% carminic acid content in an aqueous solution, alkalized with ammonium or potassium hydroxide. Great care should be taken when working with carmine solution prepared with a hydroxide. This is a strong alkali and workers are advised to avoid splashing and to always wear safety glasses. Request an SDS from the supplier relative to the alkali used in the colorant’s preparation. Carmine will precipitate out of solution at low pH. It is stable to light, heat, oxidation, storage time and is the color of choice in harsh processing applications.
+            </p>
+
+            <h2 style="color: #000000;">Application:</h2>
+            <p>
+                Carmine’s only significant technical limitation is that it will precipitate in low pH solutions. A Peruvian company obtained a U.S. Patent on an acid-proof carmine product and colorMaker can source this colorant. In powdered form, Carmine has been used for cosmetics, pharmaceutical coatings, dry mixes, surimi, fillings, cake icings, and hard candy. In the liquid form, it has found application in coloring bakery products, icings, yogurt, candy, ice cream, gelatin desserts, various milk-based and alcoholic beverages, fruit syrups, pet foods, fish cakes, jams/preserves, meat products, marmalades, hair and skin care products, soap, shampoos, lipsticks, face powders, rouges, and blushes. This colorant cannot be kosher certified (though some suppliers claim to have a kosher certificate), and, in some quarters, carmine is considered by vegetarians to be “non-vegan” because it comes from an insect. Finally, some natural grocers such as Whole Foods Market (Nationally) and Trader Joe's (West Coast) prohibit products that use carmine as a natural red colorant. Food technologists should consider the kosher, vegan, and distribution limitations of carmine before formulating it into their products.
+            </p>
+
+        
                 <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
                 <br>
             </div>
