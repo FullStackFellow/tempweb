@@ -1,1 +1,1 @@
-# Temporary hosting of the new colorMaker website
+# This repo is the temporary hosting of the new colorMaker website
