@@ -60,14 +60,17 @@
 
         .button-container {
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically if needed */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center vertically within the container */
+            align-items: center; /* Center horizontally within the container */
+      
         }
+
 
         /* Sample/Contact Button */
         .request-button {
             display: inline-block;
-            padding: calc(1em - 0.5vw) calc(1em + 0.5vw); /* Padding scales with screen size */
+            padding: calc(0.5em + 0.5vw) calc(3em + 0.5vw); /* Padding scales with screen size */
             font-size: clamp(16px, 1.5vw, 20px); /* Font size scales between 14px and 20px */
             font-weight: bold;
             color: white;
@@ -288,7 +291,9 @@
 
           <!-- Buttons for Contact Us and To The Lab -->
           <div class="button-container">
+            <p>Interested in learning more about Annatto?</p>
             <a href="ContactUs.html" class="request-button" >Contact Us!</a>
+            <p>Ready to test Annatto in your product?</p>
             <a href="SampleRequest.html" class="request-button" >To The Lab!</a>
           </div>
 
