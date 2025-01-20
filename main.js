@@ -1,15 +1,18 @@
-// Toggle navigation overlay
+// script.js
+
 function toggleNav() {
     const overlayWrapper = document.getElementById("navOverlayWrapper");
     if (overlayWrapper.style.display === "block") {
-        overlayWrapper.style.display = "none"; // Hide menu
+        overlayWrapper.style.display = "none";
     } else {
-        overlayWrapper.style.display = "block"; // Show menu
+        overlayWrapper.style.display = "block";
     }
 }
 
-// Toggle dropdown menu
 function toggleDropdown(id) {
     const dropdownMenu = document.getElementById(id);
     dropdownMenu.classList.toggle("show"); // Add or remove the 'show' class
 }
+
+
+
