@@ -364,8 +364,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   width: 100%;
   height: 100%;
   overflow-y: scroll; /* Allow scrolling */
-  -ms-overflow-style: none; /* Hide scrollbar for IE */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 9999;
 }
@@ -403,6 +401,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* Dropdown menu styles */
 .dropdown {
   position: relative;
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .dropdown-menu {
@@ -413,10 +412,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background-color: rgba(0, 0, 0, 0.95);
   z-index: 11;
   width: 100%;
-  max-height: 70vh; /* Limit dropdown height */
+  max-height: 100vh; /* Limit dropdown height */
   overflow-y: auto; /* Enable scrolling for long content */
-  -ms-overflow-style: none; /* Hide scrollbar for IE */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
 .dropdown-menu a {
@@ -426,26 +423,18 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   text-align: center;
   display: block; /* Full-width links */
   transition: 0.5s; /* Smooth hover effect */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .dropdown-menu a:hover {
   background-color: #575757; /* Highlight effect */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 /* Toggle dropdown via JavaScript */
 .dropdown-menu.show {
   display: block; /* Show the dropdown */
-}
-
-
-/* This hides scroll bar and also fixes scroll locking issue */
-
-#navOverlayWrapper::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome/Safari */
-}
-
-.dropdown-menu::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome/Safari */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 
