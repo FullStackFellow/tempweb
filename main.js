@@ -18,7 +18,6 @@ function toggleDropdown(id) {
     dropdownMenu.classList.toggle("show"); // Add or remove the 'show' class
 }
 
-// Prevent scroll locking for nested menus
 function enableNestedScrolling(container) {
     container.addEventListener("touchstart", (e) => {
         const startY = e.touches[0].clientY;
@@ -27,17 +26,18 @@ function enableNestedScrolling(container) {
             const currentY = moveEvent.touches[0].clientY;
             const deltaY = currentY - startY;
 
+            // Check if the scroll is at the top or bottom
             if (
-                (container.scrollTop === 0 && deltaY > 0) || // Scrolling up at the top
-                (container.scrollHeight - container.scrollTop <= container.clientHeight && deltaY < 0) // Scrolling down at the bottom
+                (container.scrollTop === 0 && deltaY > 0) || // At the top, scrolling up
+                (container.scrollHeight - container.scrollTop <= container.clientHeight && deltaY < 0) // At the bottom, scrolling down
             ) {
-                moveEvent.preventDefault(); // Prevent lock
+                moveEvent.preventDefault(); // Prevent locking
             }
         });
     });
 }
 
-// Call enableNestedScrolling for each dropdown menu
+// Apply this to the dropdown menus
 document.querySelectorAll(".dropdown-menu").forEach((dropdown) => {
     enableNestedScrolling(dropdown);
 });
