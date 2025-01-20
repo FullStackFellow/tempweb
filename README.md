@@ -1,1 +1,1 @@
-# Temporary hosting of colorMaker website
+# Temporary hosting of the colorMaker website
