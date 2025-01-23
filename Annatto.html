@@ -105,8 +105,17 @@
             max-width: 40vw; /* Scale the image dynamically based on viewport width */
             height: auto; /* Maintain aspect ratio */
             border-radius: 8px; /* Optional: rounded corners */
-            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Optional subtle shadow */
-        }
+
+            /* Opaque gradient for fading edges */
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+        }       
 
         /* Responsive Design for Mobile */
         @media (max-width: 768px) {
