@@ -313,10 +313,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
+    height: 100%; /* Full viewport height */
+    width: 100%; /* Full viewport width */
     position: relative;
     background-color: #fff; /* Optional: set background color */
+    margin-top: 145px; /* Adjust based on navbar height */
+    margin-bottom: 70px; /* Adjust based on footer height */
   }
 
   .stationary-image {
@@ -346,7 +348,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     .stationary-image {
       max-width: 80%; /* Adjust based on image size */
     }
-
+    
     .move-image {
       top: -20px; /* Reset top position */
       left: -15px; /* Reset left position */
