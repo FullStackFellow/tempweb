@@ -47,9 +47,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
 .w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
 .w3-dropdown-hover:hover .w3-dropdown-content{display:block}
-.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000}
+.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{color:#000}
 .w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
-.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1; max-height:calc(100vh - 50px); overflow-y: auto;}
 .w3-check,.w3-radio{width:24px;height:24px;position:relative;top:6px}
 .w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
 .w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
@@ -313,13 +313,14 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Full viewport height */
-    width: 100%; /* Full viewport width */
+    height: calc(100vh - 215px); /* Full viewport height minus margins (145px + 70px) */
+    width: 100vw; /* Full viewport width */
     position: relative;
     background-color: #fff; /* Optional: set background color */
     margin-top: 145px; /* Adjust based on navbar height */
     margin-bottom: 70px; /* Adjust based on footer height */
   }
+
 
   .stationary-image {
     max-width: 40%; /* Adjust based on image size */
@@ -539,5 +540,24 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   filter: grayscale(20%); /* Keep greyscale effect */
 }
 
-/* CSS for homepage dropdown menu -------------------------------------------------------*/
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .logo-image {
+    width: 40%; /* Set the image size */
+    display: block; /* Center image as a block element */
+    margin: 0 auto; /* Center image horizontally */
+    filter: grayscale(20%); /* Keep greyscale effect */
+  }
+}
+
+/* CSS for homepage spacer to move dropdown menus to the right --------------------*/
+
+.w3-padding-dynamic {
+  padding-left: calc(100vw - 700px) !important;
+  padding-right: 5px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  pointer-events: none; /* Disables clicking */
+  cursor: not-allowed; 
+}
 
