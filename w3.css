@@ -344,8 +344,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   @media (max-width: 768px) {
    
       .full-screen-container {
-          height: calc(100vh - 170px); /* Full viewport height minus margins (145px + 70px) */
-          width: calc(100vw - 20px); /* Full viewport width */
+          height: calc(100dvh - 170px); /* Full viewport height minus margins (145px + 70px) */
+          width: calc(100dvw - 20px); /* Full viewport width */
           flex-direction: column; /* Stack elements vertically */
           overflow: hidden; /* Prevent accidental scrolling */
       }
