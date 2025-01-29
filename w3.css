@@ -279,7 +279,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
   .small-spline-personal-care {
-    width: 80%; /* Element occupies 70% of the container width */
+    width: 90%; /* Element occupies 70% of the container width */
     margin: 0 auto; /* Center the element horizontally */
     padding: 0; /* Ensure no padding interferes */
     min-height: 100px; /* Set a minimum height for the content */
