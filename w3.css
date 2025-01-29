@@ -268,9 +268,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .small-spline-left,
   .small-spline-right,
   .small-spline-pet-food,
-  .small-spline-personal-care,
   .small-spline-other {
-    width: 70%; /* Element occupies 70% of the container width */
+    width: 80%; /* Element occupies 70% of the container width */
     margin: 0 auto; /* Center the element horizontally */
     padding: 0; /* Ensure no padding interferes */
     min-height: 100px; /* Set a minimum height for the content */
@@ -279,6 +278,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     box-sizing: border-box; /* Ensure padding doesn't affect overall height */
   }
 
+  .small-spline-personal-care {
+    width: 80%; /* Element occupies 70% of the container width */
+    margin: 0 auto; /* Center the element horizontally */
+    padding: 0; /* Ensure no padding interferes */
+    min-height: 100px; /* Set a minimum height for the content */
+    max-height: 200px; /* Optional: Limit the maximum height */
+    overflow: hidden; /* Prevent content overflow causing height increase */
+    box-sizing: border-box; /* Ensure padding doesn't affect overall height */
+    transform: translateX(30px); /* Move the element slightly to the left */
+  }
 
 
   .parent-container {
@@ -356,7 +365,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     
     .move-image {
       top: -25px; /* Reset top position */
-      left: 0px; /* Reset left position */
+      left: -5px; /* Reset left position */
     }
     
   }
