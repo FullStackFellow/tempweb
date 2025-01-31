@@ -612,23 +612,23 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background: #f3d5b5;
 }
 
-h2 {
+.container h2 {
   font-size: 20px;
   margin-bottom: 15px;
 }
 
-p {
+.container p {
   font-size: 16px;
   line-height: 1.5;
 }
 
-a {
+.container a {
   color: blue;
   text-decoration: none;
   font-weight: bold;
 }
 
-a:hover {
+.container a:hover {
   text-decoration: underline;
 }
 
@@ -648,11 +648,11 @@ a:hover {
     padding: 15px; /* Adjust padding for better mobile spacing */
   }
 
-  h2 {
+  .container h2 {
     font-size: 18px; /* Slightly smaller text for mobile readability */
   }
 
-  p {
+  .container p {
     font-size: 14px; /* Reduce paragraph font size for better fit */
   }
 }

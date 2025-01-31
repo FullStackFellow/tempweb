@@ -23,4 +23,3 @@ function showContainer() {
     }, 10);
     document.getElementById("logoContainer").style.display = "none"; // Hide the image
 }
-
