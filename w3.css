@@ -563,6 +563,100 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 }
 
+/* CSS for color garden informational card --------------------*/
+
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo-image {
+  cursor: pointer;
+  width: 200px;
+}
+
+.container {
+  display: none; /* Initially hidden */
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto; /* Keeps it centered */
+  opacity: 0; /* Start fully transparent */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-bakers {
+  background: #d4e1b3;
+}
+
+.store-owners {
+  background: #c0d7f3;
+}
+
+.color-garden {
+  background: #f3d5b5;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%; /* Use more screen width for better spacing */
+    margin: 10px auto; /* Reduce margin for better fit */
+  }
+
+  .content {
+    flex-direction: column; /* Stack boxes vertically */
+    align-items: center; /* Center align the columns */
+  }
+
+  .column {
+    width: 100%; /* Ensure full width for each stacked box */
+    padding: 15px; /* Adjust padding for better mobile spacing */
+  }
+
+  h2 {
+    font-size: 18px; /* Slightly smaller text for mobile readability */
+  }
+
+  p {
+    font-size: 14px; /* Reduce paragraph font size for better fit */
+  }
+}
+
 /* CSS for homepage spacer to move dropdown menus to the right --------------------*/
 
 .w3-padding-dynamic {
