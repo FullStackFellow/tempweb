@@ -166,20 +166,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
 .w3-pale-blue,.w3-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
 
-
 .small-spline-left{width: 200px; height: 300px; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0); float: left !important; margin-left: -120px;}
 .small-spline-right{width: 200px; height: 300px; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0); float: right !important;}
-
 
 .small-spline-pet-food{width: 300px; height: 300px; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0); float: right !important;}
 .small-spline-personal-care{width: 250px; height: 300px; padding: 10px; padding-left: 35px; border-radius: 10px; background-color: rgba(0, 0, 0, 0); float: right !important;}
 .small-spline-other{width: 300px; height: 300px; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0); float: right !important;}
 
-
 .use-container-left{width: 75%; padding: 20px; border-radius: 30px; background-color: lightgray; float: left; margin-left: 10px !important;}
 .use-container-right{width: 75%; padding: 20px; border-radius: 30px; background-color: lightgray; float: right; margin-right: 10px !important;}    
 .use-container-middle{width: 75%; padding: 20px; border-radius: 30px; background-color: lightgray; float: middle; margin: 10px !important;}    
-
 
 /* Responsive layout - rules for mobile scaling ------------------------------------------------- */
 @media (max-width: 768px) {
@@ -316,7 +312,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 }
 
-
 /* Landing Page Fade In ---------------------------------------------------------------- */
   .full-screen-container {
     display: flex;
@@ -329,7 +324,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     margin-top: 145px; /* Adjust based on navbar height */
     margin-bottom: 70px; /* Adjust based on footer height */
   }
-
 
   .stationary-image {
     max-width: 40%; /* Adjust based on image size */
@@ -369,7 +363,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     }
     
   }
-
 
 /* Mobile dropdown --------------------------------------------------------------------------*/ 
 #navOverlayWrapper {
@@ -453,7 +446,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   display: block; /* Show the dropdown */
   overflow-y: auto; /* Allow scrolling if content overflows */
 }
-
 
 /* CSS for javascript colorpicker -------------------------------------------------------*/
 .modal {
@@ -667,4 +659,3 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   pointer-events: none; /* Disables clicking */
   cursor: not-allowed; 
 }
-
