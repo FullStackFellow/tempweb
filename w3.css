@@ -575,7 +575,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   width: 200px;
 }
 
-.container {
+.container-popup {
   display: none; /* Initially hidden */
   width: 80%;
   max-width: 1000px;
@@ -584,7 +584,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
 }
 
-.content {
+.content-popup {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -612,33 +612,33 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background: #f3d5b5;
 }
 
-.container h2 {
+.container-popup h2 {
   font-size: 20px;
   margin-bottom: 15px;
 }
 
-.container p {
+.container-popup p {
   font-size: 16px;
   line-height: 1.5;
 }
 
-.container a {
+.container-popup a {
   color: blue;
   text-decoration: none;
   font-weight: bold;
 }
 
-.container a:hover {
+.container-popup a:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-  .container {
+  .container-popup {
     width: 95%; /* Use more screen width for better spacing */
     margin: 10px auto; /* Reduce margin for better fit */
   }
 
-  .content {
+  .content-popup {
     flex-direction: column; /* Stack boxes vertically */
     align-items: center; /* Center align the columns */
   }
@@ -648,11 +648,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     padding: 15px; /* Adjust padding for better mobile spacing */
   }
 
-  .container h2 {
+  .container-popup h2 {
     font-size: 18px; /* Slightly smaller text for mobile readability */
   }
 
-  .container p {
+  .container-popup p {
     font-size: 14px; /* Reduce paragraph font size for better fit */
   }
 }
