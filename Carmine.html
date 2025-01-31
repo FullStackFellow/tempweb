@@ -3,280 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>colorMaker</title>
+
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>colorMaker</title>
-    
-    <!-- Add Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 
     <style>
+        /* General Reset */
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
         }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #ffffff;
-            padding-top: 20px;
-        }
-        
+
+        /* Container for Flexboxes */
         .container {
             display: flex;
+            flex-direction: row; /* Default: side-by-side layout */
             justify-content: space-between;
-            max-width: 1200px;
-            width: 90%;
-            gap: 20px;
+            margin: 1in; 
         }
-    
-        .text-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column; /* Stack title and text vertically */
-            gap: 20px;
+
+        /* Left Flexbox: Text */
+        .left-box {
+            flex: 0 0 45%; /* Non-fixed width for the text box */
+            order: 1; /* Default order for text on the left */
+            overflow-y: auto; 
+            margin-right: 0.5in;
+            margin-left: 0.5in; 
         }
-    
-        .title-section h1 {
-            font-size: 48px;
-            color: #333;
-            margin: 0;
-            margin-top: 5px;
-        }
-    
-        .image-section {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    
-        .image-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-    
-        .text-section p {
+
+        .left-box p {
             font-size: 18px;
-            color: #555;
+            color: #000000;
             line-height: 1.6;
             margin: 0 0 30px 0;
         }
-    
+
+        /* Title Section */
+        .title-section h1 {
+            font-size: 48px; 
+            color: #333; 
+            margin: 0; /* Remove default margin */
+            margin-top: -60px; /* Remove spacing above the title */
+            margin-bottom: 20px; /* Add spacing below the title */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center vertically within the container */
+            align-items: center; /* Center horizontally within the container */
+      
+        }
+
+        /* Sample/Contact Button */
         .request-button {
             display: inline-block;
-            padding: 20px 40px;
-            font-size: 24px;
+            padding: calc(0.5em + 0.5vw) calc(3em + 0.5vw); /* Padding scales with screen size */
+            font-size: clamp(16px, 1.5vw, 20px); /* Font size scales between 14px and 20px */
             font-weight: bold;
             color: white;
-            background-color: #edca4d;
-            border: none;
+            background-color: #960018 ;
             border-radius: 15px;
-            width: 250px;
-            text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.2s ease;
             cursor: pointer;
+            margin-bottom: 30px;
         }
     
+        /* Button Hover Effect */
         .request-button:hover {
-            background-color: #88323d;
+            background-color: #D70040 ;
             transform: scale(1.05);
         }
-    
 
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-        .container {
-            flex-direction: column; /* Stack all sections vertically */
-            align-items: center;
+        /* Right Flexbox: Image */
+        .right-box {
+            flex: 0 0 auto; /* auto width for the image box */
+            order: 2; /* Default order for image on the right */
             display: flex;
+            width: 50%; /* Fixed width for the image */
+            justify-content: center;
         }
 
-        .title-section h1 {
-            order: 1; /* Title first */
-            font-size: clamp(28px, 5vw, 48px); /* Adjust font size between 24px and 48px */
-            text-align: center;
-            margin-bottom: 5px;
-            margin-top: -25px;
-        }
+        /* Center Image and Scale Dynamically */
+        .right-box img {
+            position: fixed; /* Keeps the image fixed in the viewport */
+            top: 50%; /* Align to the vertical center */
+            transform: translateY(-50%); /* Offset by half the height */
+            max-width: 40vw; /* Scale the image dynamically based on viewport width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: rounded corners */
 
-        .image-section {
-            order: 2; /* Image second */
-            margin-top: 60px;
-        }
-
-        .text-content {
-            order: 3; /* Entire text content last */
-            text-align: center;
-        }
-
-        .text-section {
-            margin-top: 0px;
-        }
-
-        .request-button {
-            width: 80%; /* Make button width responsive */
-            max-width: 250px; /* Keep maximum width for larger screens */
-            padding: 15px 20px; /* Adjust padding for smaller screens */
-            font-size: clamp(16px, 4vw, 20px); /* Scale font size dynamically */
-            margin-top: 20px;
-            margin-bottom: 50px;
+            /* Opaque gradient for fading edges */
+            -webkit-mask-image: 
+              linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%) /* Bottom fade */,
+              linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%) /* Top fade */,
+              linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%) /* Left fade */,
+              linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%) /* Right fade */;
+            -webkit-mask-composite: destination-in; /* Apply the gradients to all edges */
+            mask-image: 
+              linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%),
+              linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%),
+              linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%);
+            mask-composite: intersect;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-size: cover;
+            mask-size: cover;
         }       
 
-    }   
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                margin: 0.5in; 
+            }
 
+            .left-box {
+                order: 2; /* Ensure text appears below the image */
+                margin-right: 0; 
+                margin-left: 0;
+                overflow-y: visible; /* Ensure text scrolls normally */
+            }
+
+            .title-section h1 {
+                font-size: 32px; /* Slightly smaller title */
+                text-align: center; /* Center the text horizontally */
+                margin: 0 auto; /* Ensure it's centered in its container */
+                transform: translateY(-10px); /* Move title up slightly */
+            }
+
+            .right-box {
+                order: 1; /* Ensure image appears on top */
+                width: 100%; 
+                position: relative; /* Reset position for mobile */
+                transform: translateY(60%); /* Offset image down slightly */
+            }
+
+            .right-box img {
+                position: static; /* Image scrolls with content */
+                width: 100%; 
+                height: auto; 
+                margin-top: 10px; /* Add spacing above */
+                margin-bottom: 10px; /* Add spacing below */
+                max-width: 80vw; /* Make image slightly smaller on mobile */
+            }
+        }
     </style>
-    
 </head>
 <body>
 
-<!-- Desktop Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
-    <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
-          <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
-          <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
-          <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
-          <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
-          <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
-        <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
-        <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
-        <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
-        <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
-        <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
-        <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
-        <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
-        <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
-        <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
-        <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
-        <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
-        <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
-        <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
-        <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-        <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-        <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
-        <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Mobile Navbar -->
-<div id="navOverlayWrapper" style="display: none;">
-  <div id="navOverlay" class="w3-bar-block w3-black">
-    <!-- Close Button -->
-    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
-    <div class="menu-items">
-      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
-      <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-
-      <!-- Information Dropdown -->
-      <div class="dropdown">
-        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
-        <div id="InformationDropdown" class="dropdown-menu">
-          <a href="ourstory.html" class="w3-bar-item w3-button w3-padding-large">Our Story</a>
-          <a href="staff.html" class="w3-bar-item w3-button w3-padding-large">Staff</a>
-          <a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-          <a href="Partners.html" class="w3-bar-item w3-button w3-padding-large">Partners</a>
-          <a href="PrivacyNotice.html" class="w3-bar-item w3-button w3-padding-large">Privacy Notice</a>
-          <a href="Regulations.html" class="w3-bar-item w3-button w3-padding-large">Regulation And Labeling</a>
+    <!-- Desktop Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sample Request</a>
+        <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title="More">Information <i class="fa fa-caret-down"></i></button>     
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+              <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+              <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+              <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+              <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+              <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+          </div>
         </div>
-      </div>
-      <!-- Ingredients Dropdown -->
-      <div class="dropdown">
-        <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
-        <div id="IngredientsDropdown" class="dropdown-menu">
-          <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button w3-padding-large">Natural vs Synthetic</a>
-          <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
-          <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
-          <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
-          <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
-          <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
-          <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
-          <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
-          <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
-          <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
-          <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
-          <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
-          <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
-          <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
-          <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
-          <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
-          <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
-          <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title="More">Ingredients <i class="fa fa-caret-down"></i></button>     
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+            <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+            <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+            <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+            <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+            <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+            <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+            <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+            <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+            <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+            <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+            <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+            <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+            <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+            <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+            <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+            <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+            <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <!-- Mobile Navbar -->
+    <div id="navOverlayWrapper" style="display: none;">
+      <div id="navOverlay" class="w3-bar-block w3-black">
+        <!-- Close Button -->
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">Close <i class="fa fa-close"></i></a>
+        <div class="menu-items">
+          <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+          <a href="SampleRequest.html" class="w3-bar-item w3-button w3-padding-large">Sample Request</a>
+          <a href="ContactUs.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+        
+          <!-- Information Dropdown -->
+          <div class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('InformationDropdown')">Information <i class="fa fa-caret-down"></i></a>
+            <div id="InformationDropdown" class="dropdown-menu">
+              <a href="ourstory.html" class="w3-bar-item w3-button">Our Story</a>
+              <a href="staff.html" class="w3-bar-item w3-button">Staff</a>
+              <a href="FAQ.html" class="w3-bar-item w3-button">FAQ</a>
+              <a href="Partners.html" class="w3-bar-item w3-button">Partners</a>
+              <a href="PrivacyNotice.html" class="w3-bar-item w3-button">Privacy Notice</a>
+              <a href="Regulations.html" class="w3-bar-item w3-button">Regulation And Labeling</a>
+            </div>
+          </div>
+          <!-- Ingredients Dropdown -->
+          <div class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle w3-bar-item w3-button w3-padding-large" onclick="toggleDropdown('IngredientsDropdown')">Ingredients <i class="fa fa-caret-down"></i></a>
+            <div id="IngredientsDropdown" class="dropdown-menu">
+              <a href="NaturalVsSynthetic.html" class="w3-bar-item w3-button">Natural vs Synthetic</a>
+              <a href="NaturalColors.html" class="w3-bar-item w3-button">Natural Colors</a>
+              <a href="Annatto.html" class="w3-bar-item w3-button">Annatto</a>
+              <a href="Beet.html" class="w3-bar-item w3-button">Beet</a>
+              <a href="Beta-Carotene.html" class="w3-bar-item w3-button">Beta-Carotene</a>
+              <a href="Caramel.html" class="w3-bar-item w3-button">Caramel</a>
+              <a href="Carmine.html" class="w3-bar-item w3-button">Carmine</a>
+              <a href="Grape.html" class="w3-bar-item w3-button">Grape</a>
+              <a href="Paprika.html" class="w3-bar-item w3-button">Paprika</a>
+              <a href="Saffron.html" class="w3-bar-item w3-button">Saffron</a>
+              <a href="Turmeric.html" class="w3-bar-item w3-button">Turmeric</a>
+              <a href="Chlorophyll.html" class="w3-bar-item w3-button">Chlorophyll</a>
+              <a href="Lycopene.html" class="w3-bar-item w3-button">Lycopene</a>
+              <a href="TitaniumDioxide.html" class="w3-bar-item w3-button">Titanium Dioxide</a>
+              <a href="PurpleCarrot.html" class="w3-bar-item w3-button">Purple Carrot & Purple Sweet Potato</a>
+              <a href="RedCabbage.html" class="w3-bar-item w3-button">Red Cabbage & Red Raddish</a>
+              <a href="IronOxide.html" class="w3-bar-item w3-button">Iron Oxide</a>
+              <a href="Spirulina.html" class="w3-bar-item w3-button">Spirulina</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
-        <!-- Title Section -->
-        <div class="text-content">
-            <div class="title-section" style="margin-top: 40px;">
-                <h1>Carmine</h1>
-            </div>
-    
-            <div class="text-section">
-              <p>
-                In the ancient world of the Aztecs, carmine was the homage of kings. It was considered more valuable than gold. This bright red colorant required the labor of hundreds of subjects combing the desert in search of the cochineal insect. It is believed that around 1518, Cortez discovered the Aztecs using cochineal. To the Spaniards, it was an amazing colorant and considerably stronger than other dyes used in Europe. The Spanish government turned it into a lucrative export.
-            </p>
-            <p>
-                This insect <i>Dactylopus coccus costa</i> attaches itself to specific varieties of cactus (<i>Opuntia</i> or <i>Nopalea</i>) found in the semi-arid areas of Peru, Bolivia, Chile, The Canary Islands, and Mexico. Collection of the insects is a cottage industry, but development of plantations and deliberate seeding of the cacti is on the increase in all the producing areas.
-            </p>
-            
-            <h2 style="color: #000000;">Preparation:</h2>
-            <p>
-                The colorant is extracted from the bodies of female insects, which may contain from 10% to 20% of their dry weight of the color principle chemically called: carminic acid. The collected insects are dried and extracted with alkalized hot water or alkalized hot water containing low levels of ethanol. It is estimated that about 25 million insects are required to make 32 pounds of water-soluble extract. The extract is meticulously processed to be totally free of any insect parts. The resulting liquid is called cochineal, a term also used to refer to the insect and products prepared from the extract. It is important that buyers understand the context in which the term "cochineal" is being used because language difficulties can cause confusion.
-            </p>
-            <h2 style="color: #000000;">Properties:</h2>
-            <p>
-                Cochineal (the primary extract) is a purplish-red liquid, water soluble and susceptible to microbial degradation if not handled with care. For this reason, it is often subsequently tray dried or spray-dried. Cochineal is therefore available as a liquid (variable amount of carminic acid below 5%), crystal form (usually 95-99% carminic acid) and powdered form (about 50% carminic acid). Cochineal is pH sensitive, as it is orange-yellow below pH 4, wine red from pH 4 to 6.5, and purple-red above pH 6.5. Cochineal extract has found application primarily in the beverage industry. Its solubility in aqueous acidic systems and absence of aluminum content favor broader application.
-            </p>
-            <p>
-                Carmine is made by precipitating carminic acid from the primary extract onto an alumina hydrate substrate, using aluminum or calcium cations. This precipitate is a "lake" and is traditionally dried to contain about 50 to 53% carminic acid. Carmine is insoluble in water and oil. It is stable if pH is held above 6. It is soluble in alkaline solution, where it is a bright burgundy/violet color. Liquid carmine is usually offered as a 3% to 7.5% carminic acid content in an aqueous solution, alkalized with ammonium or potassium hydroxide. Great care should be taken when working with carmine solution prepared with a hydroxide. This is a strong alkali and workers are advised to avoid splashing and to always wear safety glasses. Request an SDS from the supplier relative to the alkali used in the colorant’s preparation. Carmine will precipitate out of solution at low pH. It is stable to light, heat, oxidation, storage time and is the color of choice in harsh processing applications.
-            </p>
-
-            <h2 style="color: #000000;">Application:</h2>
-            <p>
-                Carmine’s only significant technical limitation is that it will precipitate in low pH solutions. A Peruvian company obtained a U.S. Patent on an acid-proof carmine product and colorMaker can source this colorant. In powdered form, Carmine has been used for cosmetics, pharmaceutical coatings, dry mixes, surimi, fillings, cake icings, and hard candy. In the liquid form, it has found application in coloring bakery products, icings, yogurt, candy, ice cream, gelatin desserts, various milk-based and alcoholic beverages, fruit syrups, pet foods, fish cakes, jams/preserves, meat products, marmalades, hair and skin care products, soap, shampoos, lipsticks, face powders, rouges, and blushes. This colorant cannot be kosher certified (though some suppliers claim to have a kosher certificate), and, in some quarters, carmine is considered by vegetarians to be “non-vegan” because it comes from an insect. Finally, some natural grocers such as Whole Foods Market (Nationally) and Trader Joe's (West Coast) prohibit products that use carmine as a natural red colorant. Food technologists should consider the kosher, vegan, and distribution limitations of carmine before formulating it into their products.
-            </p>
-
+        <!-- Left Flexbox: Text -->
+        <div class="left-box">
+          <div class="title-section" style="margin-top: 40px;">
+            <h1>Carmine</h1>
+          </div>
+          <p>
+            In the ancient world of the Aztecs, carmine was the homage of kings. It was considered more valuable than gold. This bright red colorant required the labor of hundreds of subjects combing the desert in search of the cochineal insect. It is believed that around 1518, Cortez discovered the Aztecs using cochineal. To the Spaniards, it was an amazing colorant and considerably stronger than other dyes used in Europe. The Spanish government turned it into a lucrative export.
+        </p>
+        <p>
+            This insect <i>Dactylopus coccus costa</i> attaches itself to specific varieties of cactus (<i>Opuntia</i> or <i>Nopalea</i>) found in the semi-arid areas of Peru, Bolivia, Chile, The Canary Islands, and Mexico. Collection of the insects is a cottage industry, but development of plantations and deliberate seeding of the cacti is on the increase in all the producing areas.
+        </p>
         
-                <a href="ContactUs.html" class="request-button" style="margin-bottom: 30px;">Contact Us!</a>
-                <br>
-            </div>
+        <h2 style="color: #e21b22;">Preparation:</h2>
+        <p>
+            The colorant is extracted from the bodies of female insects, which may contain from 10% to 20% of their dry weight of the color principle chemically called: carminic acid. The collected insects are dried and extracted with alkalized hot water or alkalized hot water containing low levels of ethanol. It is estimated that about 25 million insects are required to make 32 pounds of water-soluble extract. The extract is meticulously processed to be totally free of any insect parts. The resulting liquid is called cochineal, a term also used to refer to the insect and products prepared from the extract. It is important that buyers understand the context in which the term "cochineal" is being used because language difficulties can cause confusion.
+        </p>
+        <h2 style="color: #e21b22;">Properties:</h2>
+        <p>
+            Cochineal (the primary extract) is a purplish-red liquid, water soluble and susceptible to microbial degradation if not handled with care. For this reason, it is often subsequently tray dried or spray-dried. Cochineal is therefore available as a liquid (variable amount of carminic acid below 5%), crystal form (usually 95-99% carminic acid) and powdered form (about 50% carminic acid). Cochineal is pH sensitive, as it is orange-yellow below pH 4, wine red from pH 4 to 6.5, and purple-red above pH 6.5. Cochineal extract has found application primarily in the beverage industry. Its solubility in aqueous acidic systems and absence of aluminum content favor broader application.
+        </p>
+        <p>
+            Carmine is made by precipitating carminic acid from the primary extract onto an alumina hydrate substrate, using aluminum or calcium cations. This precipitate is a "lake" and is traditionally dried to contain about 50 to 53% carminic acid. Carmine is insoluble in water and oil. It is stable if pH is held above 6. It is soluble in alkaline solution, where it is a bright burgundy/violet color. Liquid carmine is usually offered as a 3% to 7.5% carminic acid content in an aqueous solution, alkalized with ammonium or potassium hydroxide. Great care should be taken when working with carmine solution prepared with a hydroxide. This is a strong alkali and workers are advised to avoid splashing and to always wear safety glasses. Request an SDS from the supplier relative to the alkali used in the colorant’s preparation. Carmine will precipitate out of solution at low pH. It is stable to light, heat, oxidation, storage time and is the color of choice in harsh processing applications.
+        </p>
+
+        <h2 style="color: #e21b22;">Application:</h2>
+        <p>
+            Carmine’s only significant technical limitation is that it will precipitate in low pH solutions. A Peruvian company obtained a U.S. Patent on an acid-proof carmine product and colorMaker can source this colorant. In powdered form, Carmine has been used for cosmetics, pharmaceutical coatings, dry mixes, surimi, fillings, cake icings, and hard candy. In the liquid form, it has found application in coloring bakery products, icings, yogurt, candy, ice cream, gelatin desserts, various milk-based and alcoholic beverages, fruit syrups, pet foods, fish cakes, jams/preserves, meat products, marmalades, hair and skin care products, soap, shampoos, lipsticks, face powders, rouges, and blushes. This colorant cannot be kosher certified (though some suppliers claim to have a kosher certificate), and, in some quarters, carmine is considered by vegetarians to be “non-vegan” because it comes from an insect. Finally, some natural grocers such as Whole Foods Market (Nationally) and Trader Joe's (West Coast) prohibit products that use carmine as a natural red colorant. Food technologists should consider the kosher, vegan, and distribution limitations of carmine before formulating it into their products.
+        </p>
+          <br>
+
+          <!-- Buttons for Contact Us and To The Lab -->
+          <div class="button-container">
+            <p>Interested in learning more about Carmine?</p>
+            <a href="ContactUs.html" class="request-button" >Contact Us!</a>
+            <p>Ready to test Carmine in your product?</p>
+            <a href="SampleRequest.html" class="request-button" >To The Lab!</a>
+          </div>
+
         </div>
-    
-        <!-- Image Section -->
-        <div class="image-section">
-            <img src="Images/carmine.jpg" alt="carmine">
+
+        <!-- Right Flexbox: Image -->
+        <div class="right-box">
+            <img src="Images/5 Carmine.jpg" alt="Carmine">
         </div>
+
     </div>
     <script src="main.js"></script>
 </body>
